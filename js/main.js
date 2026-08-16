@@ -91,6 +91,36 @@ const SCENES = [
    Per aggiornare, cambia il numero di versione qui e ritesta.            */
 const MOTION_URL = "https://cdn.jsdelivr.net/npm/motion@11.18.2/+esm";
 
+/* -------- Foto delle camere (card + galleria/lightbox) --------
+   Ogni camera ha un array "photos": la PRIMA è la copertina della card,
+   TUTTE compaiono nel lightbox quando si clicca la card.
+   Per aggiungere foto a una stanza, aggiungi oggetti { webp, jpg, alt }.
+   Se hai solo il JPG, metti lo stesso percorso anche in "webp".
+   coverPosition regola l'inquadratura della copertina (es. "center", "50% 30%"). */
+const CAMERE = [
+  {
+    name: "Matrimoniale Deluxe",
+    coverPosition: "center",
+    photos: [
+      { webp: "assets/img/camera-deluxe.webp", jpg: "assets/img/camera-deluxe.jpg", alt: "Camera Matrimoniale Deluxe" },
+    ],
+  },
+  {
+    name: "Deluxe con Balcone",
+    coverPosition: "center",
+    photos: [
+      { webp: "assets/img/camera-balcone.webp", jpg: "assets/img/camera-balcone.jpg", alt: "Camera Deluxe con Balcone" },
+    ],
+  },
+  {
+    name: "Vista Giardino",
+    coverPosition: "center",
+    photos: [
+      { webp: "assets/img/camera-giardino.webp", jpg: "assets/img/camera-giardino.jpg", alt: "Camera con Vista Giardino" },
+    ],
+  },
+];
+
 
 /* ============================================================
    2) AVVIO
@@ -100,9 +130,11 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 // Enhancements che NON dipendono da Motion: partono sempre.
 setYear();
 applyScenes();
+applyCamere();
 applyBooking();
 initMenu();
 initScrollUI();
+initGallery();
 
 // Scrollytelling e reveal: richiedono Motion. Import in try/catch.
 (async () => {
@@ -183,6 +215,150 @@ function applyBooking() {
       a.rel = "noopener";
     }
   });
+}
+
+/* Copertina + conteggio foto delle card camere, da CAMERE. */
+function applyCamere() {
+  document.querySelectorAll(".camera-media[data-gallery]").forEach((btn) => {
+    const cam = CAMERE[+btn.dataset.gallery];
+    if (!cam || !cam.photos || !cam.photos.length) return;
+    const cover = cam.photos[0];
+    const source = btn.querySelector("source");
+    const img = btn.querySelector("img");
+    if (source && cover.webp) source.srcset = cover.webp;
+    if (img) {
+      if (cover.jpg) img.src = cover.jpg;
+      if (cover.alt) img.alt = cover.alt;
+      if (cam.coverPosition) img.style.objectPosition = cam.coverPosition;
+    }
+    const count = btn.querySelector("[data-count]");
+    if (count) count.textContent = cam.photos.length;
+  });
+}
+
+/* Lightbox galleria: frecce, tastiera, swipe, thumbnail, focus-trap. */
+function initGallery() {
+  const triggers = [...document.querySelectorAll(".camera-media[data-gallery]")];
+  if (!triggers.length) return;
+
+  const lb = document.createElement("div");
+  lb.className = "lightbox";
+  lb.setAttribute("role", "dialog");
+  lb.setAttribute("aria-modal", "true");
+  lb.setAttribute("aria-label", "Galleria foto della camera");
+  lb.innerHTML =
+    '<div class="lb-stage">' +
+      '<button class="lb-close" type="button" aria-label="Chiudi galleria">×</button>' +
+      '<button class="lb-nav lb-prev" type="button" aria-label="Foto precedente">‹</button>' +
+      '<figure class="lb-figure"><img class="lb-img" alt=""></figure>' +
+      '<button class="lb-nav lb-next" type="button" aria-label="Foto successiva">›</button>' +
+    '</div>' +
+    '<div class="lb-footer">' +
+      '<p class="lb-caption"></p>' +
+      '<div class="lb-counter"><span class="lb-index">1</span> / <span class="lb-total">1</span></div>' +
+      '<div class="lb-thumbs"></div>' +
+    '</div>';
+  document.body.appendChild(lb);
+
+  const imgEl = lb.querySelector(".lb-img");
+  const capEl = lb.querySelector(".lb-caption");
+  const idxEl = lb.querySelector(".lb-index");
+  const totEl = lb.querySelector(".lb-total");
+  const counterEl = lb.querySelector(".lb-counter");
+  const prevBtn = lb.querySelector(".lb-prev");
+  const nextBtn = lb.querySelector(".lb-next");
+  const closeBtn = lb.querySelector(".lb-close");
+  const thumbsEl = lb.querySelector(".lb-thumbs");
+
+  let photos = [], i = 0, lastFocus = null, camName = "";
+
+  const preload = (n) => {
+    const ph = photos[(n + photos.length) % photos.length];
+    if (ph) { const im = new Image(); im.src = ph.webp || ph.jpg; }
+  };
+
+  const show = (n) => {
+    i = (n + photos.length) % photos.length;
+    const ph = photos[i];
+    const url = ph.webp || ph.jpg;
+    imgEl.classList.add("is-swapping");
+    const tmp = new Image();
+    tmp.onload = () => { imgEl.src = url; imgEl.alt = ph.alt || camName; imgEl.classList.remove("is-swapping"); };
+    tmp.onerror = () => { imgEl.src = ph.jpg; imgEl.alt = ph.alt || camName; imgEl.classList.remove("is-swapping"); };
+    tmp.src = url;
+    idxEl.textContent = i + 1;
+    capEl.textContent = camName;
+    thumbsEl.querySelectorAll(".lb-thumb").forEach((t, k) => t.classList.toggle("is-current", k === i));
+    if (photos.length > 1) { preload(i + 1); preload(i - 1); }
+  };
+
+  const buildThumbs = () => {
+    thumbsEl.innerHTML = "";
+    if (photos.length < 2) return;
+    photos.forEach((ph, k) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "lb-thumb"; b.setAttribute("aria-label", "Vai alla foto " + (k + 1));
+      const im = document.createElement("img");
+      im.src = ph.webp || ph.jpg; im.alt = ""; im.loading = "lazy";
+      b.appendChild(im);
+      b.addEventListener("click", () => show(k));
+      thumbsEl.appendChild(b);
+    });
+  };
+
+  const open = (camIndex) => {
+    const cam = CAMERE[camIndex];
+    if (!cam || !cam.photos || !cam.photos.length) return;
+    photos = cam.photos; camName = cam.name;
+    totEl.textContent = photos.length;
+    const single = photos.length < 2;
+    prevBtn.hidden = single; nextBtn.hidden = single;
+    counterEl.style.display = single ? "none" : "";
+    buildThumbs();
+    lastFocus = document.activeElement;
+    lb.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    show(0);
+    closeBtn.focus();
+  };
+
+  const close = () => {
+    lb.classList.remove("is-open");
+    document.body.style.overflow = "";
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  };
+
+  triggers.forEach((btn) => btn.addEventListener("click", () => open(+btn.dataset.gallery)));
+  prevBtn.addEventListener("click", () => show(i - 1));
+  nextBtn.addEventListener("click", () => show(i + 1));
+  closeBtn.addEventListener("click", close);
+  lb.addEventListener("click", (e) => {
+    if (e.target === lb || e.target.classList.contains("lb-stage") || e.target.classList.contains("lb-figure")) close();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!lb.classList.contains("is-open")) return;
+    if (e.key === "Escape") { close(); return; }
+    if (photos.length > 1 && e.key === "ArrowRight") { show(i + 1); return; }
+    if (photos.length > 1 && e.key === "ArrowLeft") { show(i - 1); return; }
+    if (e.key === "Tab") {
+      const f = [closeBtn, prevBtn, nextBtn, ...thumbsEl.querySelectorAll(".lb-thumb")]
+        .filter((el) => !el.hidden && el.offsetParent !== null);
+      if (!f.length) return;
+      const idx = f.indexOf(document.activeElement);
+      if (e.shiftKey && idx <= 0) { e.preventDefault(); f[f.length - 1].focus(); }
+      else if (!e.shiftKey && idx === f.length - 1) { e.preventDefault(); f[0].focus(); }
+    }
+  });
+
+  // swipe su mobile
+  let sx = 0, sy = 0;
+  lb.addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+  lb.addEventListener("touchend", (e) => {
+    if (photos.length < 2) return;
+    const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) show(dx < 0 ? i + 1 : i - 1);
+  }, { passive: true });
 }
 
 /* Menu overlay boutique: apertura/chiusura, ESC, focus trap, scroll lock. */
