@@ -219,33 +219,40 @@ function initMenu() {
   });
 }
 
-/* Stato header (trasparente solo in cima) + barra CTA mobile (dopo la hero). */
+/* Stato header (trasparente per TUTTA la hero) + barra CTA mobile (dopo la hero). */
 function initScrollUI() {
   const header = document.querySelector("[data-header]");
   const hero = document.querySelector("[data-hero]");
   const bar = document.querySelector("[data-mobile-cta]");
 
-  const barThreshold = () =>
-    hero ? hero.offsetTop + hero.offsetHeight - window.innerHeight - 40 : Infinity;
-  let threshold = barThreshold();
+  let headerH = header ? header.offsetHeight : 76;
+  window.addEventListener("resize", () => { headerH = header ? header.offsetHeight : 76; }, { passive: true });
 
   let ticking = false;
   const update = () => {
     ticking = false;
-    const y = window.scrollY || window.pageYOffset;
-    if (header) header.classList.toggle("is-transparent", y <= 40);
-    if (bar) bar.classList.toggle("is-visible", y > threshold);
+    if (!hero) return;
+    // una sola lettura di layout per frame, poi solo scritture (niente thrashing).
+    // bottom = bordo inferiore della hero rispetto al top del viewport.
+    const bottom = hero.getBoundingClientRect().bottom;
+    // trasparente finché la hero copre ancora l'header
+    if (header) header.classList.toggle("is-transparent", bottom > headerH + 4);
+    // barra mobile: compare quando la hero sta lasciando lo schermo
+    if (bar) bar.classList.toggle("is-visible", bottom < window.innerHeight * 0.85);
   };
   const onScroll = () => {
     if (!ticking) { ticking = true; requestAnimationFrame(update); }
   };
 
   window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", () => { threshold = barThreshold(); update(); }, { passive: true });
+  window.addEventListener("resize", update, { passive: true });
   update();
 }
 
-/* Hero scrollytelling: crossfade 4 scene guidato dal progresso di scroll. */
+/* Hero scrollytelling: crossfade 4 scene guidato dal progresso di scroll.
+   Il crossfade è mappato sul tratto in cui la hero resta "pinned"
+   (heroHeight - viewport), così tutte e 4 le scene hanno il loro momento
+   pieno prima che la hero si sganci e scorra via. */
 function initHero({ scroll }) {
   const hero = document.querySelector("[data-hero]");
   if (!hero) return;
@@ -256,7 +263,8 @@ function initHero({ scroll }) {
   const N = scenes.length;
   if (N < 2) return;
 
-  const render = (progress) => {
+  const render = (raw) => {
+    const progress = Math.min(1, Math.max(0, raw));
     const t = progress * (N - 1);                 // posizione continua 0..N-1
     const active = Math.min(N - 1, Math.max(0, Math.round(t)));
     for (let i = 0; i < N; i++) {
@@ -275,7 +283,15 @@ function initHero({ scroll }) {
   };
 
   render(0);
-  scroll(render, { target: hero, offset: ["start start", "end end"] });
+  // Motion notifica lo scroll (rAF interno). Ricavo il progresso dalla
+  // geometria live della hero: una lettura di layout, poi solo scritture.
+  // Il crossfade si completa all'85% del tratto pinned, così l'ultima
+  // scena è piena mentre la hero è ancora ferma.
+  scroll(() => {
+    const rect = hero.getBoundingClientRect();
+    const pinned = Math.max(1, (rect.height - window.innerHeight) * 0.85);
+    render(-rect.top / pinned);
+  }, { target: hero, offset: ["start start", "end end"] });
 }
 
 /* Reveal in stagger degli elementi [data-stagger] all'ingresso nel viewport. */
