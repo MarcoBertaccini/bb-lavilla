@@ -47,6 +47,9 @@
   --salvia: #7E8B76;
   --ottone: #A87D3D;
   --ottone-scuro: #8C6631;
+  --ottone-chiaro: #C8994F;   /* hover CTA: più chiaro, AA con testo ink */
+  --brass-light: #856330;     /* brass per TESTO su fondi chiari (AA ≥4.5) */
+  --brass-dark: #BA9866;      /* brass per TESTO su fondi scuri (AA ≥4.5) */
   --velo: rgba(33, 28, 22, 0.40);
 
   /* superfici derivate */
@@ -118,7 +121,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   font-family: var(--sans);
   font-size: .78rem; font-weight: 600;
   letter-spacing: .16em; text-transform: uppercase;
-  color: var(--ottone);
+  color: var(--brass-light); /* default su fondi chiari (AA); override su fondi scuri */
   display: flex; align-items: center; gap: .6rem;
 }
 .eyebrow .scene-num {
@@ -143,17 +146,17 @@ button { font: inherit; color: inherit; cursor: pointer; }
   letter-spacing: .01em; border: 1.5px solid transparent; border-radius: 999px;
   transition: background-color .25s var(--ease), color .25s var(--ease),
               border-color .25s var(--ease), transform .25s var(--ease);
-  will-change: transform;
 }
-.btn-cta { background: var(--ottone); color: var(--bone-2); border-color: var(--ottone); }
-.btn-cta:hover { background: var(--ottone-scuro); border-color: var(--ottone-scuro); transform: translateY(-1px); }
+/* testo ink su brass (AA 4.56); hover più chiaro (AA 6.54) per non perdere contrasto */
+.btn-cta { background: var(--ottone); color: var(--ink); border-color: var(--ottone); }
+.btn-cta:hover { background: var(--ottone-chiaro); border-color: var(--ottone-chiaro); transform: translateY(-1px); }
 .btn-lg { min-height: 54px; padding: .95rem 2.1rem; font-size: 1.02rem; }
 
 .link-arrow {
   display: inline-flex; align-items: center; gap: .45rem;
-  font-weight: 600; font-size: .95rem; color: var(--ottone-scuro);
+  font-weight: 600; font-size: .95rem; color: var(--brass-light);
   padding: .3rem 0; border-bottom: 1px solid transparent;
-  transition: gap .25s var(--ease), border-color .25s var(--ease);
+  transition: border-color .25s var(--ease);
 }
 .link-arrow span { transition: transform .25s var(--ease); }
 .link-arrow:hover { border-color: currentColor; }
@@ -245,7 +248,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .menu-list a:hover { color: var(--ottone); }
 .menu-meta {
   margin-top: 2.5rem; display: flex; flex-direction: column; gap: .3rem;
-  font-family: var(--sans); font-size: 1rem; color: var(--salvia);
+  font-family: var(--sans); font-size: 1rem; color: #939E8C; /* salvia schiarito (AA su overlay) */
 }
 .menu-meta a:hover { color: var(--bone); }
 
@@ -279,7 +282,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   margin: .4rem 0 .8rem;
 }
 .scene-text { font-size: clamp(1.05rem, 1rem + .6vw, 1.3rem); max-width: 34ch; color: color-mix(in srgb, var(--bone) 92%, white); }
-.scene .eyebrow { color: var(--ottone); }
+.scene .eyebrow { color: var(--brass-dark); } /* su foto scure (AA) */
 
 .hero-progress { display: none; }
 
@@ -313,11 +316,12 @@ button { font: inherit; color: inherit; cursor: pointer; }
     transform: translateY(-50%); display: flex; flex-direction: column; gap: 12px;
   }
   .hero-progress span {
-    width: 2px; height: 26px; border-radius: 2px;
+    width: 2px; height: 26px; border-radius: 2px; transform-origin: center;
     background: color-mix(in srgb, var(--bone) 45%, transparent);
-    transition: height .4s var(--ease), background-color .4s var(--ease);
+    /* scaleY invece di height: solo compositor, niente layout */
+    transition: transform .4s var(--ease), background-color .4s var(--ease);
   }
-  .hero-progress span.is-active { height: 46px; background: var(--ottone); }
+  .hero-progress span.is-active { transform: scaleY(1.77); background: var(--ottone); } /* 26px → ~46px */
 }
 
 /* ---------- SECTION BASE ---------- */
@@ -354,7 +358,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 /* ---------- SERVIZI ---------- */
 .section-servizi { background: var(--bosco); color: var(--bone); }
 .section-servizi .section-title { color: var(--bone-2); }
-.section-servizi .eyebrow { justify-content: flex-start; color: var(--ottone); }
+.section-servizi .eyebrow { justify-content: flex-start; color: var(--brass-dark); } /* su bosco (AA) */
 .servizi-grid { display: grid; gap: clamp(1.6rem, 3vw, 2.6rem); grid-template-columns: 1fr; }
 .servizio { padding-top: 1.4rem; border-top: 1px solid var(--line-light); }
 .servizio-icon { width: 30px; height: 30px; fill: var(--ottone); margin-bottom: .9rem; }
@@ -373,7 +377,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   padding-bottom: .7rem; border-bottom: 1px solid var(--line);
   color: color-mix(in srgb, var(--ink) 80%, transparent);
 }
-.distanze strong { color: var(--ottone-scuro); font-variant-numeric: tabular-nums; min-width: 4.2rem; }
+.distanze strong { color: var(--brass-light); font-variant-numeric: tabular-nums; min-width: 4.2rem; }
 
 /* ---------- FOOTER ---------- */
 .site-footer { background: var(--ink); color: var(--bone); padding-top: clamp(3.5rem, 7vw, 5.5rem); }
@@ -435,6 +439,30 @@ button { font: inherit; color: inherit; cursor: pointer; }
 /* stato iniziale solo quando il JS è attivo, per non nascondere senza JS */
 .js-scrollytelling [data-stagger] > * { opacity: 0; transform: translateY(24px); }
 .js-scrollytelling [data-stagger].is-inview > * { opacity: 1; transform: none; }
+
+/* ---------- PAGINE LEGALI ---------- */
+.legal-header {
+  position: sticky; top: 0; z-index: 100;
+  background: color-mix(in srgb, var(--bone-2) 92%, transparent);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.legal-header .header-inner { justify-content: space-between; }
+.legal-back { display: inline-flex; align-items: center; gap: .45rem; font-weight: 600; font-size: .95rem; color: var(--ottone-scuro); }
+.legal-back:hover { color: var(--ink); }
+.legal { padding-block: clamp(3rem, 8vh, 6rem); }
+.legal .container { max-width: 760px; }
+.legal .eyebrow { justify-content: flex-start; margin-bottom: 1rem; }
+.legal h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 1.4rem + 3vw, 3rem); line-height: 1.1; margin-bottom: .6rem; }
+.legal .updated { color: color-mix(in srgb, var(--ink) 68%, transparent); font-size: .9rem; margin-bottom: 2.5rem; }
+.legal h2 { font-family: var(--serif); font-weight: 500; font-size: 1.4rem; margin: 2.2rem 0 .7rem; }
+.legal p, .legal li { color: color-mix(in srgb, var(--ink) 84%, transparent); }
+.legal p { margin-bottom: 1rem; }
+.legal ul { margin: 0 0 1rem; padding-left: 1.1rem; list-style: disc; display: grid; gap: .5rem; }
+.legal a { color: var(--brass-light); text-decoration: underline; text-underline-offset: 2px; }
+.legal a:hover { color: var(--ink); }
+.legal .note { background: var(--bone-2); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.2rem 1.4rem; margin: 1.5rem 0; }
+.legal .note p:last-child { margin-bottom: 0; }
 
 /* ---------- REDUCED MOTION ---------- */
 @media (prefers-reduced-motion: reduce) {
