@@ -102,21 +102,35 @@ const CAMERE = [
     name: "Matrimoniale Deluxe",
     coverPosition: "center",
     photos: [
-      { webp: "assets/img/camera-deluxe.webp", jpg: "assets/img/camera-deluxe.jpg", alt: "Camera Matrimoniale Deluxe" },
+      { webp: "assets/img/camere/deluxe-1.webp", jpg: "assets/img/camere/deluxe-1.jpg", alt: "Matrimoniale Deluxe: la camera con letto matrimoniale e divano" },
+      { webp: "assets/img/camere/deluxe-2.webp", jpg: "assets/img/camere/deluxe-2.jpg", alt: "Matrimoniale Deluxe: la camera con parquet e tappeto" },
+      { webp: "assets/img/camere/deluxe-3.webp", jpg: "assets/img/camere/deluxe-3.jpg", alt: "Matrimoniale Deluxe: il bagno con doccia" },
+      { webp: "assets/img/camere/deluxe-4.webp", jpg: "assets/img/camere/deluxe-4.jpg", alt: "Matrimoniale Deluxe: il bagno" },
     ],
   },
   {
     name: "Deluxe con Balcone",
     coverPosition: "center",
     photos: [
-      { webp: "assets/img/camera-balcone.webp", jpg: "assets/img/camera-balcone.jpg", alt: "Camera Deluxe con Balcone" },
+      { webp: "assets/img/camere/balcone-1.webp", jpg: "assets/img/camere/balcone-1.jpg", alt: "Deluxe con Balcone: la camera con parete blu" },
+      { webp: "assets/img/camere/balcone-2.webp", jpg: "assets/img/camere/balcone-2.jpg", alt: "Deluxe con Balcone: la camera matrimoniale" },
+      { webp: "assets/img/camere/balcone-3.webp", jpg: "assets/img/camere/balcone-3.jpg", alt: "Deluxe con Balcone: il balcone con vista sul giardino" },
+      { webp: "assets/img/camere/balcone-4.webp", jpg: "assets/img/camere/balcone-4.jpg", alt: "Deluxe con Balcone: il balcone privato" },
+      { webp: "assets/img/camere/balcone-5.webp", jpg: "assets/img/camere/balcone-5.jpg", alt: "Deluxe con Balcone: il bagno con vasca idromassaggio" },
+      { webp: "assets/img/camere/balcone-6.webp", jpg: "assets/img/camere/balcone-6.jpg", alt: "Deluxe con Balcone: il bagno" },
+      { webp: "assets/img/camere/balcone-7.webp", jpg: "assets/img/camere/balcone-7.jpg", alt: "Deluxe con Balcone: la doccia" },
     ],
   },
   {
     name: "Vista Giardino",
     coverPosition: "center",
     photos: [
-      { webp: "assets/img/camera-giardino.webp", jpg: "assets/img/camera-giardino.jpg", alt: "Camera con Vista Giardino" },
+      { webp: "assets/img/camere/giardino-1.webp", jpg: "assets/img/camere/giardino-1.jpg", alt: "Vista Giardino: la camera luminosa" },
+      { webp: "assets/img/camere/giardino-2.webp", jpg: "assets/img/camere/giardino-2.jpg", alt: "Vista Giardino: la camera con luce calda" },
+      { webp: "assets/img/camere/giardino-3.webp", jpg: "assets/img/camere/giardino-3.jpg", alt: "Vista Giardino: il balcone affacciato sul giardino" },
+      { webp: "assets/img/camere/giardino-4.webp", jpg: "assets/img/camere/giardino-4.jpg", alt: "Vista Giardino: il bagno" },
+      { webp: "assets/img/camere/giardino-5.webp", jpg: "assets/img/camere/giardino-5.jpg", alt: "Vista Giardino: la doccia" },
+      { webp: "assets/img/camere/giardino-6.webp", jpg: "assets/img/camere/giardino-6.jpg", alt: "Vista Giardino: camera e bagno" },
     ],
   },
 ];
