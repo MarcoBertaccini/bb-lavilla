@@ -15,9 +15,6 @@ const BOOKING_URL = "";
 /* Contatto WhatsApp: usato da header, barra mobile, footer e CTA (fallback). */
 const WHATSAPP_URL = "https://wa.me/393355925880";
 
-/* Mappa: embed di Google Maps (caricata SOLO al click dell'utente). */
-const MAP_EMBED = "https://www.google.com/maps?q=Via+Zampeschi+109%2FB+Forl%C3%AC&output=embed";
-
 /* Versione di Motion FISSATA (non @latest). */
 const MOTION_URL = "https://cdn.jsdelivr.net/npm/motion@11.18.2/+esm";
 
@@ -170,7 +167,7 @@ const TRANSLATIONS = {
     "map.aria": "Mostra la mappa (carica Google Maps)", "map.open": "Apri in Google Maps",
     "footer.tag": "Bed & breakfast · Forlì", "footer.contatti": "Contatti", "footer.info": "Informazioni",
     "footer.privacy": "Privacy Policy", "footer.cookie": "Cookie Policy",
-    "footer.note": "Nessun cookie di profilazione. La mappa carica Google solo su tua richiesta.",
+    "footer.note": "Nessun cookie di profilazione. La mappa è fornita da Google Maps.",
     "footer.rights": "Tutti i diritti riservati",
     "lb.close": "Chiudi galleria", "lb.prev": "Foto precedente", "lb.next": "Foto successiva",
   },
@@ -220,7 +217,7 @@ const TRANSLATIONS = {
     "map.aria": "Show the map (loads Google Maps)", "map.open": "Open in Google Maps",
     "footer.tag": "Bed & breakfast · Forlì", "footer.contatti": "Contact", "footer.info": "Information",
     "footer.privacy": "Privacy Policy", "footer.cookie": "Cookie Policy",
-    "footer.note": "No profiling cookies. The map loads Google only at your request.",
+    "footer.note": "No profiling cookies. The map is provided by Google Maps.",
     "footer.rights": "All rights reserved",
     "lb.close": "Close gallery", "lb.prev": "Previous photo", "lb.next": "Next photo",
   },
@@ -270,7 +267,7 @@ const TRANSLATIONS = {
     "map.aria": "Karte anzeigen (lädt Google Maps)", "map.open": "In Google Maps öffnen",
     "footer.tag": "Bed & breakfast · Forlì", "footer.contatti": "Kontakt", "footer.info": "Informationen",
     "footer.privacy": "Datenschutz", "footer.cookie": "Cookie-Richtlinie",
-    "footer.note": "Keine Profiling-Cookies. Die Karte lädt Google nur auf Ihre Anfrage.",
+    "footer.note": "Keine Profiling-Cookies. Die Karte wird von Google Maps bereitgestellt.",
     "footer.rights": "Alle Rechte vorbehalten",
     "lb.close": "Galerie schließen", "lb.prev": "Vorheriges Foto", "lb.next": "Nächstes Foto",
   },
@@ -291,7 +288,6 @@ applyCamere();
 initMenu();
 initScrollUI();
 initGallery();
-initMap();
 initI18n();        // imposta la lingua e applica tutti i testi (+ applyScenes)
 
 // Scrollytelling e reveal: richiedono Motion. Import in try/catch.
@@ -361,18 +357,31 @@ function setLang(lang) {
   const mt = document.querySelector(".menu-toggle");
   if (mt && mt.getAttribute("aria-expanded") !== "true") mt.setAttribute("aria-label", t("a11y.menuOpen"));
 
-  // Bottoni lingua
+  // Selettore lingua (tendina): opzione attiva + etichetta corrente
   document.querySelectorAll("[data-lang]").forEach((b) => {
     const on = b.dataset.lang === lang;
-    b.setAttribute("aria-pressed", String(on));
     b.classList.toggle("is-active", on);
+    b.setAttribute("aria-selected", String(on));
   });
+  const cur = document.querySelector("[data-lang-current]");
+  if (cur) cur.textContent = lang.toUpperCase();
 }
 
 function initI18n() {
-  document.querySelectorAll("[data-lang]").forEach((b) => {
-    b.addEventListener("click", () => setLang(b.dataset.lang));
-  });
+  const sel = document.querySelector("[data-lang-select]");
+  if (sel) {
+    const trigger = sel.querySelector(".lang-current");
+    const openSel = (v) => {
+      sel.classList.toggle("is-open", v);
+      if (trigger) trigger.setAttribute("aria-expanded", String(v));
+    };
+    if (trigger) trigger.addEventListener("click", (e) => { e.stopPropagation(); openSel(!sel.classList.contains("is-open")); });
+    sel.querySelectorAll("[data-lang]").forEach((b) => {
+      b.addEventListener("click", () => { setLang(b.dataset.lang); openSel(false); if (trigger) trigger.focus(); });
+    });
+    document.addEventListener("click", (e) => { if (!sel.contains(e.target)) openSel(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") openSel(false); });
+  }
   setLang(LANG);
 }
 
@@ -403,24 +412,6 @@ function applyBooking() {
     a.href = url;
     if (external) { a.target = "_blank"; a.rel = "noopener"; }
   });
-}
-
-/* Mappa Google caricata SOLO al click (nessuna richiesta a Google prima). */
-function initMap() {
-  const wrap = document.querySelector("[data-map]");
-  const btn = wrap && wrap.querySelector("[data-map-load]");
-  if (!wrap || !btn || !MAP_EMBED) return;
-  btn.addEventListener("click", () => {
-    const iframe = document.createElement("iframe");
-    iframe.src = MAP_EMBED;
-    iframe.title = "Mappa — b&b La Villa, Via Zampeschi 109/B, Forlì";
-    iframe.loading = "lazy";
-    iframe.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
-    iframe.setAttribute("allowfullscreen", "");
-    wrap.innerHTML = "";
-    wrap.appendChild(iframe);
-    wrap.classList.add("is-loaded");
-  }, { once: true });
 }
 
 /* Scrive foto/testi delle SCENES nel DOM (l'HTML resta come fallback). */
