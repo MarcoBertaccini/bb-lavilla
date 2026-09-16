@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANTE (go-live): sostituire il dominio con quello definitivo quando acquistato.
+     Sono elencate solo le pagine indicizzabili: privacy.html e cookie.html restano "noindex"
+     e non vanno in sitemap. Aggiornare <lastmod> alle modifiche rilevanti. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://bblavilla.zenith-studio.it/</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

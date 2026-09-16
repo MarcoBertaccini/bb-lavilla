@@ -25,7 +25,7 @@ Vincoli decisi col cliente:
 |---|---|---|
 | `robots.txt` | `Disallow: /` (blocca tutto) | invertire al go-live |
 | `noindex,nofollow` | presente su tutte e 3 le pagine | rimuovere al go-live |
-| `sitemap.xml` | **assente** | creare (URL col dominio) |
+| `sitemap.xml` | **creato** (scaffold, URL provvisorio) | aggiornare l'URL col dominio |
 | `CNAME` | `bblavilla.zenith-studio.it` | aggiornare col dominio finale |
 | canonical / hreflang / og:url / og:image / twitter:image / JSON-LD `url`+`image` | puntano a `bblavilla.zenith-studio.it` | aggiornare col dominio finale |
 | email `info@bblavilla.it` | in mailto + JSON-LD + privacy | confermare/creare col dominio |
@@ -48,23 +48,24 @@ Vincoli decisi col cliente:
 - [ ] Confermare orari/servizi definitivi (check-in 16–21, check-out 11, Wi-Fi, colazione).
 
 ### 2. Qualità tecnica (QA)
-- [ ] **Lighthouse / PageSpeed Insights** su desktop e mobile: Performance, Accessibilità,
-  Best Practices, SEO. Correggere eventuali segnalazioni.
-- [ ] Test su **iPhone reale** (hero scrollytelling, safe-area, barra CTA mobile, menu lingua).
-- [ ] Console browser **senza errori**; verifica contrasti header sulle foto.
-- [ ] Verifica pesi immagini (budget ≤300KB) e presenza `alt` su tutte.
-- [ ] Test anteprima link (Open Graph) — l'`og-image` c'è; ricontrollare dopo il cambio dominio.
+- [x] **QA automatico (Chromium)**: nessun errore console reale, **nessun 404/asset rotto**,
+  JSON-LD `BedAndBreakfast` **valido**, `og-image` raggiungibile (200), sito verificato in IT/EN/DE.
+- [x] Verifica **pesi immagini** (tutte ≤300KB, max 274KB) e **`alt` presente su tutte** le `<img>`.
+- [ ] **Lighthouse / PageSpeed Insights** su desktop e mobile (Performance, Accessibilità, Best
+  Practices, SEO): da eseguire sul sito servito (richiede il sito raggiungibile pubblicamente).
+- [ ] Test su **iPhone reale** (hero scrollytelling, safe-area, barra CTA mobile, menu lingua) — serve un dispositivo fisico.
 
 ### 3. Preparare (ma NON attivare) gli asset SEO di produzione
-- [ ] Scrivere la **versione di produzione di `robots.txt`** (pronta, da attivare al go-live):
+- [x] **`sitemap.xml` creato** (scaffold, solo la home indicizzabile). URL provvisorio →
+  da aggiornare col dominio al go-live.
+- [ ] Versione di produzione di **`robots.txt`** (contenuto pronto qui sotto; NON attivata,
+  l'attiva resta `Disallow: /` fino al go-live):
   ```
   User-agent: *
   Allow: /
   Sitemap: https://IL-DOMINIO/sitemap.xml
   ```
-- [ ] Preparare l'edit di **rimozione `noindex`** dalle 3 pagine (da applicare al go-live).
-- [ ] Predisporre lo scheletro di **`sitemap.xml`** (home + privacy + cookie); gli URL assoluti
-  si completano col dominio.
+- [ ] Rimozione `noindex` dalle 3 pagine → da applicare al go-live (Blocco 2, §10).
 
 ### 4. Presenza su Google (indipendente dal sito)
 - [ ] Creare/preparare l'**account Google** che gestirà Search Console + Profilo attività.
