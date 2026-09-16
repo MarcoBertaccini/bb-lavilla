@@ -95,11 +95,10 @@ const CAMERE = [
     photos: [
       { webp: "assets/img/camere/balcone-1.webp", jpg: "assets/img/camere/balcone-1.jpg", alt: "Deluxe con Balcone: la camera con parete blu" },
       { webp: "assets/img/camere/balcone-2.webp", jpg: "assets/img/camere/balcone-2.jpg", alt: "Deluxe con Balcone: la camera matrimoniale" },
-      { webp: "assets/img/camere/balcone-3.webp", jpg: "assets/img/camere/balcone-3.jpg", alt: "Deluxe con Balcone: il balcone con vista sul giardino" },
-      { webp: "assets/img/camere/balcone-4.webp", jpg: "assets/img/camere/balcone-4.jpg", alt: "Deluxe con Balcone: il balcone privato" },
-      { webp: "assets/img/camere/balcone-5.webp", jpg: "assets/img/camere/balcone-5.jpg", alt: "Deluxe con Balcone: il bagno con vasca idromassaggio" },
-      { webp: "assets/img/camere/balcone-6.webp", jpg: "assets/img/camere/balcone-6.jpg", alt: "Deluxe con Balcone: il bagno" },
-      { webp: "assets/img/camere/balcone-7.webp", jpg: "assets/img/camere/balcone-7.jpg", alt: "Deluxe con Balcone: la doccia" },
+      { webp: "assets/img/camere/balcone-3.webp", jpg: "assets/img/camere/balcone-3.jpg", alt: "Deluxe con Balcone: il balcone privato arredato con vista sul giardino" },
+      { webp: "assets/img/camere/balcone-4.webp", jpg: "assets/img/camere/balcone-4.jpg", alt: "Deluxe con Balcone: il bagno con vasca idromassaggio" },
+      { webp: "assets/img/camere/balcone-5.webp", jpg: "assets/img/camere/balcone-5.jpg", alt: "Deluxe con Balcone: il bagno" },
+      { webp: "assets/img/camere/balcone-6.webp", jpg: "assets/img/camere/balcone-6.jpg", alt: "Deluxe con Balcone: la doccia" },
     ],
   },
   {
