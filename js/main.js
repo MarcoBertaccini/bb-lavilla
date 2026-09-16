@@ -85,10 +85,8 @@ const CAMERE = [
     name: { it: "Matrimoniale Deluxe", en: "Deluxe Double", de: "Deluxe-Doppelzimmer" },
     coverPosition: "center",
     photos: [
-      { webp: "assets/img/camere/deluxe-1.webp", jpg: "assets/img/camere/deluxe-1.jpg", alt: "Matrimoniale Deluxe: la camera con letto matrimoniale e divano" },
-      { webp: "assets/img/camere/deluxe-2.webp", jpg: "assets/img/camere/deluxe-2.jpg", alt: "Matrimoniale Deluxe: la camera con parquet e tappeto" },
-      { webp: "assets/img/camere/deluxe-3.webp", jpg: "assets/img/camere/deluxe-3.jpg", alt: "Matrimoniale Deluxe: il bagno con doccia" },
-      { webp: "assets/img/camere/deluxe-4.webp", jpg: "assets/img/camere/deluxe-4.jpg", alt: "Matrimoniale Deluxe: il bagno" },
+      { webp: "assets/img/camere/deluxe-1.webp", jpg: "assets/img/camere/deluxe-1.jpg", alt: "Matrimoniale Deluxe: la camera con letto matrimoniale, divano e parquet" },
+      { webp: "assets/img/camere/deluxe-2.webp", jpg: "assets/img/camere/deluxe-2.jpg", alt: "Matrimoniale Deluxe: il bagno con doccia walk-in" },
     ],
   },
   {
