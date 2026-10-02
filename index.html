@@ -5,37 +5,32 @@
   <!-- viewport-fit=cover: necessario per env(safe-area-inset-*) su iPhone -->
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>b&b La Villa, Bed & Breakfast a Forlì</title>
-  <meta name="description" data-i18n-meta="metaDescription" content="b&b La Villa: bed & breakfast a Forlì, a due passi dall'autostrada A14. Ideale per chi viaggia per lavoro: parcheggio privato, Wi-Fi gratuito, camere silenziose e colazione dolce e salata.">
+  <title>B&B La Villa, Bed & Breakfast a Forlì</title>
+  <meta name="description" data-i18n-meta="metaDescription" content="B&B La Villa: bed & breakfast a Forlì, vicino all'A14. Parcheggio privato gratuito, Wi-Fi, camere silenziose e colazione dolce e salata.">
 
-  <!-- ============================================================
-       DEMO NON INDICIZZABILE — RIMUOVERE AL GO-LIVE
-       Togliere il meta "robots" qui sotto e cambiare robots.txt
-       (Disallow: /) quando il sito viene approvato e pubblicato.
-       ============================================================ -->
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow">
 
-  <link rel="canonical" href="https://bblavilla.zenith-studio.it/">
-  <link rel="alternate" hreflang="it" href="https://bblavilla.zenith-studio.it/">
-  <link rel="alternate" hreflang="x-default" href="https://bblavilla.zenith-studio.it/">
+  <link rel="canonical" href="https://bblavilla.com/">
+  <link rel="alternate" hreflang="it" href="https://bblavilla.com/">
+  <link rel="alternate" hreflang="x-default" href="https://bblavilla.com/">
 
   <!-- Open Graph (anteprima link su WhatsApp / social) -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="b&b La Villa">
-  <meta property="og:title" content="b&b La Villa, Bed & Breakfast a Forlì">
-  <meta property="og:description" content="A Forlì, a due passi dall'A14. Comodo per chi viaggia per lavoro: parcheggio, Wi-Fi, camere silenziose e colazione dolce e salata.">
-  <meta property="og:url" content="https://bblavilla.zenith-studio.it/">
-  <meta property="og:image" content="https://bblavilla.zenith-studio.it/assets/img/og-image.jpg">
+  <meta property="og:title" content="B&B La Villa, Bed & Breakfast a Forlì">
+  <meta property="og:description" content="Bed & breakfast a Forlì, vicino all'A14. Parcheggio privato gratuito, Wi-Fi e colazione dolce e salata.">
+  <meta property="og:url" content="https://bblavilla.com/">
+  <meta property="og:image" content="https://bblavilla.com/assets/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="b&b La Villa, bed & breakfast a Forlì">
+  <meta property="og:image:alt" content="B&B La Villa, bed & breakfast a Forlì">
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="b&b La Villa, Bed & Breakfast a Forlì">
-  <meta name="twitter:description" content="A Forlì, a due passi dall'A14. Comodo per chi viaggia per lavoro.">
-  <meta name="twitter:image" content="https://bblavilla.zenith-studio.it/assets/img/og-image.jpg">
+  <meta name="twitter:title" content="B&B La Villa, Bed & Breakfast a Forlì">
+  <meta name="twitter:description" content="Bed & breakfast a Forlì, vicino all'A14. Parcheggio gratuito, Wi-Fi e colazione dolce e salata.">
+  <meta name="twitter:image" content="https://bblavilla.com/assets/img/og-image.jpg">
 
   <!-- Favicon / PWA -->
   <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
@@ -53,23 +48,25 @@
   <link rel="preload" as="image" href="assets/img/hero-1-esterno.webp" media="(min-width: 768px)">
   <link rel="preload" as="image" href="assets/img/hero-1-esterno-mobile.webp" media="(max-width: 767.98px)">
 
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=4">
 
   <!-- Dati strutturati JSON-LD (schema BedAndBreakfast). -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BedAndBreakfast",
-    "name": "b&b La Villa",
-    "description": "Bed & breakfast a Forlì, a due passi dall'autostrada A14. Comodo per chi viaggia per lavoro: parcheggio privato, Wi-Fi gratuito, camere silenziose e colazione dolce e salata.",
-    "url": "https://bblavilla.zenith-studio.it/",
-    "image": "https://bblavilla.zenith-studio.it/assets/img/og-image.jpg",
+    "name": "B&B La Villa",
+    "description": "Bed & breakfast a Forlì, vicino all'A14. Parcheggio privato gratuito, Wi-Fi, camere silenziose e colazione dolce e salata.",
+    "url": "https://bblavilla.com/",
+    "image": "https://bblavilla.com/assets/img/og-image.jpg",
     "telephone": "+39-335-5925880",
-    "email": "info@bblavilla.it",
+    "email": "info@bblavilla.com",
     "priceRange": "€€",
     "currenciesAccepted": "EUR",
     "petsAllowed": false,
     "smokingAllowed": false,
+    "checkinTime": "16:00",
+    "checkoutTime": "11:00",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Via Zampeschi 109/B",
@@ -78,6 +75,7 @@
       "postalCode": "47122",
       "addressCountry": "IT"
     },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Via+Zampeschi+109%2FB+Forl%C3%AC",
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Colazione inclusa", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": true },
@@ -85,6 +83,46 @@
       { "@type": "LocationFeatureSpecification", "name": "Aria condizionata", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Giardino", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Check-in flessibile", "value": true }
+    ]
+  }
+  </script>
+
+  <!-- Dati strutturati JSON-LD (FAQPage) — rispecchia la sezione FAQ visibile in pagina. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "C'è il parcheggio?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sì, il B&B dispone di parcheggio privato gratuito all'interno della proprietà." }
+      },
+      {
+        "@type": "Question",
+        "name": "La colazione è inclusa?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sì. Ogni mattina serviamo una colazione dolce e salata nella sala comune." }
+      },
+      {
+        "@type": "Question",
+        "name": "Sono ammessi animali?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Al momento non è possibile ospitare animali domestici." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto dista il centro di Forlì?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Il centro storico e Piazza Saffi sono a circa 10 minuti, mentre il casello dell'A14 a circa 5 minuti." }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso fare il check-in in tarda serata?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Il check-in è dalle 16:00 alle 21:00. Per un arrivo più tardi è possibile concordare un check-in flessibile chiamando in anticipo." }
+      },
+      {
+        "@type": "Question",
+        "name": "Come posso prenotare?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Puoi prenotare o verificare la disponibilità scrivendoci su WhatsApp al +39 335 592 5880 o via email a info@bblavilla.com." }
+      }
     ]
   }
   </script>
@@ -119,7 +157,7 @@
         <a class="quick-contact" data-whatsapp href="https://wa.me/393355925880" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp" data-i18n-attr="aria-label:a11y.whatsapp">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.06 1.6 5.83L2 22l4.4-1.15a9.9 9.9 0 0 0 5.64 1.74h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.94 1.34-.5.05-.5.4-3.15-.66-2.65-1.06-4.35-3.76-4.48-3.93-.13-.17-1.07-1.42-1.07-2.72 0-1.3.68-1.93.92-2.2.24-.26.53-.33.7-.33.18 0 .35 0 .5.01.16.01.38-.06.6.46.23.53.78 1.83.85 1.96.07.13.11.29.02.46-.09.17-.14.28-.27.43-.14.16-.29.35-.42.47-.14.13-.28.28-.12.55.16.26.72 1.18 1.54 1.91 1.06.95 1.95 1.24 2.22 1.38.27.13.43.11.59-.07.16-.17.68-.79.86-1.06.18-.27.36-.22.6-.13.25.09 1.55.73 1.82.86.27.13.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
         </a>
-        <a class="quick-contact" href="mailto:info@bblavilla.it" aria-label="Scrivi al b&b La Villa" data-i18n-attr="aria-label:a11y.email">
+        <a class="quick-contact" href="mailto:info@bblavilla.com" aria-label="Scrivi al b&b La Villa" data-i18n-attr="aria-label:a11y.email">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7L4 7v1l8 5 8-5V7z"/></svg>
         </a>
 
@@ -144,7 +182,7 @@
       </ul>
       <div class="menu-meta">
         <a data-whatsapp href="https://wa.me/393355925880" target="_blank" rel="noopener" data-i18n="contact.whatsapp">WhatsApp: +39 335 592 5880</a>
-        <a href="mailto:info@bblavilla.it">info@bblavilla.it</a>
+        <a href="mailto:info@bblavilla.com">info@bblavilla.com</a>
       </div>
     </div>
   </nav>
@@ -363,6 +401,42 @@
         </div>
       </div>
     </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section class="section section-faq" id="faq">
+      <div class="container narrow">
+        <header class="section-head">
+          <p class="eyebrow">Domande frequenti</p>
+          <h2 class="section-title">FAQ</h2>
+        </header>
+        <dl class="faq-list">
+          <div class="faq-item">
+            <dt>C'è il parcheggio?</dt>
+            <dd>Sì, il B&amp;B dispone di parcheggio privato gratuito all'interno della proprietà.</dd>
+          </div>
+          <div class="faq-item">
+            <dt>La colazione è inclusa?</dt>
+            <dd>Sì. Ogni mattina serviamo una colazione dolce e salata nella sala comune.</dd>
+          </div>
+          <div class="faq-item">
+            <dt>Sono ammessi animali?</dt>
+            <dd>Al momento non è possibile ospitare animali domestici.</dd>
+          </div>
+          <div class="faq-item">
+            <dt>Quanto dista il centro di Forlì?</dt>
+            <dd>Il centro storico e Piazza Saffi sono a circa 10 minuti, mentre il casello dell'A14 a circa 5 minuti.</dd>
+          </div>
+          <div class="faq-item">
+            <dt>Posso fare il check-in in tarda serata?</dt>
+            <dd>Il check-in è dalle 16:00 alle 21:00. Per un arrivo più tardi è possibile concordare un check-in flessibile chiamando in anticipo.</dd>
+          </div>
+          <div class="faq-item">
+            <dt>Come posso prenotare?</dt>
+            <dd>Puoi prenotare o verificare la disponibilità scrivendoci su WhatsApp al +39 335 592 5880 o via email a <a href="mailto:info@bblavilla.com">info@bblavilla.com</a>.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
   </main>
 
   <!-- ==================== FOOTER ==================== -->
@@ -380,7 +454,7 @@
           Via Zampeschi 109/B<br>
           47122 Forlì (FC)<br>
           <a data-whatsapp href="https://wa.me/393355925880" target="_blank" rel="noopener">WhatsApp: +39 335 592 5880</a><br>
-          <a href="mailto:info@bblavilla.it">info@bblavilla.it</a>
+          <a href="mailto:info@bblavilla.com">info@bblavilla.com</a>
         </address>
         <div class="socials">
           <a href="#" aria-label="Instagram" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.6a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8zM17 3H7a4 4 0 0 0-4 4v10a4 4 0 0 0 4 4h10a4 4 0 0 0 4-4V7a4 4 0 0 0-4-4zm2 14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2zm-1.6-9.9a1 1 0 1 1 0-.02z"/></svg></a>
@@ -394,6 +468,7 @@
           <li><a href="#camere" data-i18n="nav.camere">Camere</a></li>
           <li><a href="#servizi" data-i18n="nav.servizi">Servizi</a></li>
           <li><a href="#dove-siamo" data-i18n="nav.dove">Dove siamo</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
           <li><a href="cookie.html" data-i18n="footer.cookie">Cookie Policy</a></li>
         </ul>
@@ -418,6 +493,6 @@
     <a class="btn btn-cta mobile-cta-book" data-booking href="https://wa.me/393355925880" tabindex="-1" data-i18n="cta.book">Prenota</a>
   </div>
 
-  <script type="module" src="js/main.js?v=3"></script>
+  <script type="module" src="js/main.js?v=4"></script>
 </body>
 </html>

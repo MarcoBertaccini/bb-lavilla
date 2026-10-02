@@ -603,3 +603,15 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .js-scrollytelling .hero-sticky { position: relative; height: auto; }
   .js-scrollytelling [data-stagger] > * { opacity: 1; transform: none; }
 }
+
+/* ==================== FAQ ==================== */
+.section-faq .section-head { margin-bottom: 2rem; }
+.faq-list { display: flex; flex-direction: column; gap: 0; }
+.faq-item { padding: 1.25rem 0; border-top: 1px solid var(--line); }
+.faq-item:last-child { border-bottom: 1px solid var(--line); }
+.faq-item dt {
+  font-family: var(--serif); font-size: 1.15rem; font-weight: 600;
+  color: var(--ink); margin-bottom: .5rem;
+}
+.faq-item dd { margin: 0; color: var(--ink); opacity: .85; line-height: 1.6; }
+.faq-item dd a { color: var(--brass-light); text-decoration: underline; }

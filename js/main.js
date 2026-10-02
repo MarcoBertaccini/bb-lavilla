@@ -119,8 +119,8 @@ const CAMERE = [
    Chiavi usate da data-i18n / -html / -attr / -meta nell'HTML. */
 const TRANSLATIONS = {
   it: {
-    "title": "b&b La Villa, Bed & Breakfast a Forlì",
-    "metaDescription": "b&b La Villa: bed & breakfast a Forlì, a due passi dall'autostrada A14. Ideale per chi viaggia per lavoro: parcheggio privato, Wi-Fi gratuito, camere silenziose e colazione dolce e salata.",
+    "title": "B&B La Villa, Bed & Breakfast a Forlì",
+    "metaDescription": "B&B La Villa: bed & breakfast a Forlì, vicino all'A14. Parcheggio privato gratuito, Wi-Fi, camere silenziose e colazione dolce e salata.",
     "a11y.skip": "Salta al contenuto",
     "a11y.whatsapp": "Scrivici su WhatsApp",
     "a11y.email": "Scrivi al b&b La Villa",
@@ -169,8 +169,8 @@ const TRANSLATIONS = {
     "lb.close": "Chiudi galleria", "lb.prev": "Foto precedente", "lb.next": "Foto successiva",
   },
   en: {
-    "title": "b&b La Villa, Bed & Breakfast in Forlì",
-    "metaDescription": "b&b La Villa: bed & breakfast in Forlì, minutes from the A14 motorway. Ideal for business travellers: private parking, free Wi-Fi, quiet rooms and a sweet & savoury breakfast.",
+    "title": "B&B La Villa, Bed & Breakfast in Forlì",
+    "metaDescription": "B&B La Villa: bed & breakfast in Forlì, near the A14 motorway. Free private parking, Wi-Fi, quiet rooms and a sweet & savoury breakfast.",
     "a11y.skip": "Skip to content",
     "a11y.whatsapp": "Message us on WhatsApp",
     "a11y.email": "Email b&b La Villa",
@@ -219,8 +219,8 @@ const TRANSLATIONS = {
     "lb.close": "Close gallery", "lb.prev": "Previous photo", "lb.next": "Next photo",
   },
   de: {
-    "title": "b&b La Villa, Bed & Breakfast in Forlì",
-    "metaDescription": "b&b La Villa: Bed & Breakfast in Forlì, wenige Minuten von der Autobahn A14. Ideal für Geschäftsreisende: privater Parkplatz, kostenloses WLAN, ruhige Zimmer und ein süßes & herzhaftes Frühstück.",
+    "title": "B&B La Villa, Bed & Breakfast in Forlì",
+    "metaDescription": "B&B La Villa: Bed & Breakfast in Forlì, nahe der A14. Privater Parkplatz gratis, WLAN, ruhige Zimmer und ein süßes & herzhaftes Frühstück.",
     "a11y.skip": "Zum Inhalt springen",
     "a11y.whatsapp": "Schreib uns auf WhatsApp",
     "a11y.email": "b&b La Villa eine E-Mail schreiben",
