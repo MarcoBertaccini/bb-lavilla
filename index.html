@@ -48,7 +48,7 @@
   <link rel="preload" as="image" href="assets/img/hero-1-esterno.webp" media="(min-width: 768px)">
   <link rel="preload" as="image" href="assets/img/hero-1-esterno-mobile.webp" media="(max-width: 767.98px)">
 
-  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="css/style.css?v=5">
 
   <!-- Dati strutturati JSON-LD (schema BedAndBreakfast). -->
   <script type="application/ld+json">
@@ -75,7 +75,16 @@
       "postalCode": "47122",
       "addressCountry": "IT"
     },
-    "hasMap": "https://www.google.com/maps/search/?api=1&query=Via+Zampeschi+109%2FB+Forl%C3%AC",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 44.24914711958126,
+      "longitude": 12.070224281125665
+    },
+    "hasMap": "https://www.google.com/maps/place/B%26B+La+Villa/@44.2490165,12.0676923,17z/data=!3m2!4b1!5s0x132b562a96422bc3:0x644df70d3751fec2!4m9!3m8!1s0x132b57534135fbdd:0xadec3d1a32351104!5m2!4m1!1i2!8m2!3d44.2490165!4d12.0702672!16s%2Fg%2F11q432c0bx",
+    "sameAs": [
+      "https://www.booking.com/hotel/it/b-amp-b-la-villa-provincia-di-forli-cesena.it.html",
+      "https://www.google.com/maps/place/B%26B+La+Villa/@44.2490165,12.0676923,17z/data=!3m2!4b1!5s0x132b562a96422bc3:0x644df70d3751fec2!4m9!3m8!1s0x132b57534135fbdd:0xadec3d1a32351104!5m2!4m1!1i2!8m2!3d44.2490165!4d12.0702672!16s%2Fg%2F11q432c0bx"
+    ],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Colazione inclusa", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": true },
@@ -383,8 +392,8 @@
         <!-- Mappa Google incorporata -->
         <div class="dove-map">
           <iframe
-            src="https://www.google.com/maps?q=Via+Zampeschi+109%2FB+Forl%C3%AC&output=embed"
-            title="Mappa di b&b La Villa, Via Zampeschi 109/B, Forlì"
+            src="https://www.google.com/maps?q=B%26B+La+Villa%2C+Via+Zampeschi+109%2FB%2C+47122+Forl%C3%AC&output=embed"
+            title="Mappa di B&amp;B La Villa, Via Zampeschi 109/B, Forlì"
             loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
         <div class="dove-body">
@@ -397,7 +406,7 @@
             <li data-i18n-html="dist.3"><strong>10 min</strong> dall'Aeroporto di Forlì</li>
             <li data-i18n-html="dist.4"><strong>35 min</strong> dal mare (Cesenatico / Cervia)</li>
           </ul>
-          <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&query=Via+Zampeschi+109%2FB+Forl%C3%AC" target="_blank" rel="noopener" data-i18n="map.open">Apri in Google Maps<span aria-hidden="true">→</span></a>
+          <a class="link-arrow" href="https://www.google.com/maps/place/B%26B+La+Villa/@44.2490165,12.0676923,17z/data=!3m2!4b1!5s0x132b562a96422bc3:0x644df70d3751fec2!4m9!3m8!1s0x132b57534135fbdd:0xadec3d1a32351104!5m2!4m1!1i2!8m2!3d44.2490165!4d12.0702672!16s%2Fg%2F11q432c0bx" target="_blank" rel="noopener" data-i18n="map.open">Apri in Google Maps<span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -406,33 +415,33 @@
     <section class="section section-faq" id="faq">
       <div class="container narrow">
         <header class="section-head">
-          <p class="eyebrow">Domande frequenti</p>
-          <h2 class="section-title">FAQ</h2>
+          <p class="eyebrow" data-i18n="faq.eyebrow">Domande frequenti</p>
+          <h2 class="section-title" data-i18n="faq.title">FAQ</h2>
         </header>
         <dl class="faq-list">
           <div class="faq-item">
-            <dt>C'è il parcheggio?</dt>
-            <dd>Sì, il B&amp;B dispone di parcheggio privato gratuito all'interno della proprietà.</dd>
+            <dt data-i18n="faq.q1">C'è il parcheggio?</dt>
+            <dd data-i18n="faq.a1">Sì, il B&amp;B dispone di parcheggio privato gratuito all'interno della proprietà.</dd>
           </div>
           <div class="faq-item">
-            <dt>La colazione è inclusa?</dt>
-            <dd>Sì. Ogni mattina serviamo una colazione dolce e salata nella sala comune.</dd>
+            <dt data-i18n="faq.q2">La colazione è inclusa?</dt>
+            <dd data-i18n="faq.a2">Sì. Ogni mattina serviamo una colazione dolce e salata nella sala comune.</dd>
           </div>
           <div class="faq-item">
-            <dt>Sono ammessi animali?</dt>
-            <dd>Al momento non è possibile ospitare animali domestici.</dd>
+            <dt data-i18n="faq.q3">Sono ammessi animali?</dt>
+            <dd data-i18n="faq.a3">Al momento non è possibile ospitare animali domestici.</dd>
           </div>
           <div class="faq-item">
-            <dt>Quanto dista il centro di Forlì?</dt>
-            <dd>Il centro storico e Piazza Saffi sono a circa 10 minuti, mentre il casello dell'A14 a circa 5 minuti.</dd>
+            <dt data-i18n="faq.q4">Quanto dista il centro di Forlì?</dt>
+            <dd data-i18n="faq.a4">Il centro storico e Piazza Saffi sono a circa 10 minuti, mentre il casello dell'A14 a circa 5 minuti.</dd>
           </div>
           <div class="faq-item">
-            <dt>Posso fare il check-in in tarda serata?</dt>
-            <dd>Il check-in è dalle 16:00 alle 21:00. Per un arrivo più tardi è possibile concordare un check-in flessibile chiamando in anticipo.</dd>
+            <dt data-i18n="faq.q5">Posso fare il check-in in tarda serata?</dt>
+            <dd data-i18n="faq.a5">Il check-in è dalle 16:00 alle 21:00. Per un arrivo più tardi è possibile concordare un check-in flessibile chiamando in anticipo.</dd>
           </div>
           <div class="faq-item">
-            <dt>Come posso prenotare?</dt>
-            <dd>Puoi prenotare o verificare la disponibilità scrivendoci su WhatsApp al +39 335 592 5880 o via email a <a href="mailto:info@bblavilla.com">info@bblavilla.com</a>.</dd>
+            <dt data-i18n="faq.q6">Come posso prenotare?</dt>
+            <dd data-i18n-html="faq.a6">Puoi prenotare o verificare la disponibilità scrivendoci su WhatsApp al +39 335 592 5880 o via email a <a href="mailto:info@bblavilla.com">info@bblavilla.com</a>.</dd>
           </div>
         </dl>
       </div>
@@ -456,10 +465,6 @@
           <a data-whatsapp href="https://wa.me/393355925880" target="_blank" rel="noopener">WhatsApp: +39 335 592 5880</a><br>
           <a href="mailto:info@bblavilla.com">info@bblavilla.com</a>
         </address>
-        <div class="socials">
-          <a href="#" aria-label="Instagram" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.6a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8zM17 3H7a4 4 0 0 0-4 4v10a4 4 0 0 0 4 4h10a4 4 0 0 0 4-4V7a4 4 0 0 0-4-4zm2 14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2zm-1.6-9.9a1 1 0 1 1 0-.02z"/></svg></a>
-          <a href="#" aria-label="Facebook" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H17V3.6c-.3 0-1.3-.1-2.45-.1-2.4 0-4.05 1.45-4.05 4.15v2.25H7.8V13h2.7v8z"/></svg></a>
-        </div>
       </div>
 
       <div class="footer-col">
@@ -493,6 +498,6 @@
     <a class="btn btn-cta mobile-cta-book" data-booking href="https://wa.me/393355925880" tabindex="-1" data-i18n="cta.book">Prenota</a>
   </div>
 
-  <script type="module" src="js/main.js?v=4"></script>
+  <script type="module" src="js/main.js?v=5"></script>
 </body>
 </html>
