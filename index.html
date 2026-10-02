@@ -5,40 +5,32 @@
   <!-- viewport-fit=cover: necessario per env(safe-area-inset-*) su iPhone -->
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>b&b La Villa — Bed & Breakfast a Forlì</title>
-  <meta name="description" content="b&b La Villa: bed & breakfast a Forlì, a due passi dall'autostrada A14. Tre camere matrimoniali, colazione con prodotti del territorio, giardino e parcheggio privato.">
+  <title>B&B La Villa, Bed & Breakfast a Forlì</title>
+  <meta name="description" data-i18n-meta="metaDescription" content="B&B La Villa: bed & breakfast a Forlì, vicino all'A14. Parcheggio privato gratuito, Wi-Fi, camere silenziose e colazione dolce e salata.">
 
-  <!-- ============================================================
-       DEMO NON INDICIZZABILE — RIMUOVERE AL GO-LIVE
-       Togliere il meta "robots" qui sotto e cambiare robots.txt
-       (Disallow: /) quando il sito viene approvato e pubblicato.
-       ============================================================ -->
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow">
 
-  <!-- Canonical / lingua. Aggiornare l'URL se si userà un dominio proprio. -->
-  <link rel="canonical" href="https://bblavilla.zenith-studio.it/">
-  <link rel="alternate" hreflang="it" href="https://bblavilla.zenith-studio.it/">
-  <!-- hreflang EN predisposto per la futura versione inglese:
-  <link rel="alternate" hreflang="en" href="https://bblavilla.zenith-studio.it/en/"> -->
-  <link rel="alternate" hreflang="x-default" href="https://bblavilla.zenith-studio.it/">
+  <link rel="canonical" href="https://bblavilla.com/">
+  <link rel="alternate" hreflang="it" href="https://bblavilla.com/">
+  <link rel="alternate" hreflang="x-default" href="https://bblavilla.com/">
 
   <!-- Open Graph (anteprima link su WhatsApp / social) -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="b&b La Villa">
-  <meta property="og:title" content="b&b La Villa — Bed & Breakfast a Forlì">
-  <meta property="og:description" content="Tre camere matrimoniali, colazione del territorio e giardino. A Forlì, a due passi dall'autostrada A14.">
-  <meta property="og:url" content="https://bblavilla.zenith-studio.it/">
-  <meta property="og:image" content="https://bblavilla.zenith-studio.it/assets/img/og-image.jpg">
+  <meta property="og:title" content="B&B La Villa, Bed & Breakfast a Forlì">
+  <meta property="og:description" content="Bed & breakfast a Forlì, vicino all'A14. Parcheggio privato gratuito, Wi-Fi e colazione dolce e salata.">
+  <meta property="og:url" content="https://bblavilla.com/">
+  <meta property="og:image" content="https://bblavilla.com/assets/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="b&b La Villa — bed & breakfast a Forlì">
+  <meta property="og:image:alt" content="B&B La Villa, bed & breakfast a Forlì">
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="b&b La Villa — Bed & Breakfast a Forlì">
-  <meta name="twitter:description" content="Tre camere matrimoniali, colazione del territorio e giardino. A Forlì, a due passi dall'autostrada A14.">
-  <meta name="twitter:image" content="https://bblavilla.zenith-studio.it/assets/img/og-image.jpg">
+  <meta name="twitter:title" content="B&B La Villa, Bed & Breakfast a Forlì">
+  <meta name="twitter:description" content="Bed & breakfast a Forlì, vicino all'A14. Parcheggio gratuito, Wi-Fi e colazione dolce e salata.">
+  <meta name="twitter:image" content="https://bblavilla.com/assets/img/og-image.jpg">
 
   <!-- Favicon / PWA -->
   <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
@@ -56,37 +48,43 @@
   <link rel="preload" as="image" href="assets/img/hero-1-esterno.webp" media="(min-width: 768px)">
   <link rel="preload" as="image" href="assets/img/hero-1-esterno-mobile.webp" media="(max-width: 767.98px)">
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=5">
 
-  <!-- Dati strutturati JSON-LD (schema BedAndBreakfast).
-       Valori con TODO da completare con i dati reali della struttura. -->
+  <!-- Dati strutturati JSON-LD (schema BedAndBreakfast). -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BedAndBreakfast",
-    "name": "b&b La Villa",
-    "description": "Bed & breakfast a Forlì, a due passi dall'autostrada A14. Tre camere matrimoniali, colazione con prodotti del territorio, giardino e parcheggio privato.",
-    "url": "https://bblavilla.zenith-studio.it/",
-    "image": "https://bblavilla.zenith-studio.it/assets/img/og-image.jpg",
-    "telephone": "+39-0543-000000",
-    "email": "info@bblavilla.it",
+    "name": "B&B La Villa",
+    "description": "Bed & breakfast a Forlì, vicino all'A14. Parcheggio privato gratuito, Wi-Fi, camere silenziose e colazione dolce e salata.",
+    "url": "https://bblavilla.com/",
+    "image": "https://bblavilla.com/assets/img/og-image.jpg",
+    "telephone": "+39-335-5925880",
+    "email": "info@bblavilla.com",
     "priceRange": "€€",
     "currenciesAccepted": "EUR",
     "petsAllowed": false,
     "smokingAllowed": false,
+    "checkinTime": "16:00",
+    "checkoutTime": "11:00",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Via delle Rose 00",
+      "streetAddress": "Via Zampeschi 109/B",
       "addressLocality": "Forlì",
       "addressRegion": "FC",
-      "postalCode": "47121",
+      "postalCode": "47122",
       "addressCountry": "IT"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "44.2226",
-      "longitude": "12.0407"
+      "latitude": 44.24914711958126,
+      "longitude": 12.070224281125665
     },
+    "hasMap": "https://www.google.com/maps/place/B%26B+La+Villa/@44.2490165,12.0676923,17z/data=!3m2!4b1!5s0x132b562a96422bc3:0x644df70d3751fec2!4m9!3m8!1s0x132b57534135fbdd:0xadec3d1a32351104!5m2!4m1!1i2!8m2!3d44.2490165!4d12.0702672!16s%2Fg%2F11q432c0bx",
+    "sameAs": [
+      "https://www.booking.com/hotel/it/b-amp-b-la-villa-provincia-di-forli-cesena.it.html",
+      "https://www.google.com/maps/place/B%26B+La+Villa/@44.2490165,12.0676923,17z/data=!3m2!4b1!5s0x132b562a96422bc3:0x644df70d3751fec2!4m9!3m8!1s0x132b57534135fbdd:0xadec3d1a32351104!5m2!4m1!1i2!8m2!3d44.2490165!4d12.0702672!16s%2Fg%2F11q432c0bx"
+    ],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Colazione inclusa", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Wi-Fi gratuito", "value": true },
@@ -97,9 +95,49 @@
     ]
   }
   </script>
+
+  <!-- Dati strutturati JSON-LD (FAQPage) — rispecchia la sezione FAQ visibile in pagina. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "C'è il parcheggio?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sì, il B&B dispone di parcheggio privato gratuito all'interno della proprietà." }
+      },
+      {
+        "@type": "Question",
+        "name": "La colazione è inclusa?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sì. Ogni mattina serviamo una colazione dolce e salata nella sala comune." }
+      },
+      {
+        "@type": "Question",
+        "name": "Sono ammessi animali?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Al momento non è possibile ospitare animali domestici." }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto dista il centro di Forlì?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Il centro storico e Piazza Saffi sono a circa 10 minuti, mentre il casello dell'A14 a circa 5 minuti." }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso fare il check-in in tarda serata?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Il check-in è dalle 16:00 alle 21:00. Per un arrivo più tardi è possibile concordare un check-in flessibile chiamando in anticipo." }
+      },
+      {
+        "@type": "Question",
+        "name": "Come posso prenotare?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Puoi prenotare o verificare la disponibilità scrivendoci su WhatsApp al +39 335 592 5880 o via email a info@bblavilla.com." }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <a class="skip-link" href="#contenuto">Salta al contenuto</a>
+  <a class="skip-link" href="#contenuto" data-i18n="a11y.skip">Salta al contenuto</a>
 
   <!-- ==================== HEADER ==================== -->
   <header class="site-header" data-header>
@@ -110,17 +148,31 @@
       </a>
 
       <div class="header-actions">
-        <!-- Contatti rapidi: TODO sostituire con telefono/email reali -->
-        <a class="quick-contact" href="tel:+390543000000" aria-label="Chiama il b&b La Villa">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1z"/></svg>
+        <!-- Selettore lingua (tendina) -->
+        <div class="lang-select" data-lang-select>
+          <button type="button" class="lang-current" aria-haspopup="listbox" aria-expanded="false" aria-label="Lingua / Language">
+            <svg class="lang-globe" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-2.6a15.6 15.6 0 0 0-1.1-3.1A8 8 0 0 1 18.9 8zM12 4.2c.8 1 1.4 2.3 1.8 3.8h-3.6c.4-1.5 1-2.8 1.8-3.8zM4.6 14a8 8 0 0 1 0-4h3a17.6 17.6 0 0 0 0 4zm.5 2h2.6c.3 1.1.6 2.2 1.1 3.1A8 8 0 0 1 5.1 16zm2.6-8H5.1a8 8 0 0 1 3.8-3.1C8.4 5.8 8 6.9 7.7 8zM12 19.8c-.8-1-1.4-2.3-1.8-3.8h3.6c-.4 1.5-1 2.8-1.8 3.8zm2.2-5.8H9.8a15.6 15.6 0 0 1 0-4h4.4a15.6 15.6 0 0 1 0 4zm.7 5.1c.5-.9.8-2 1.1-3.1h2.6a8 8 0 0 1-3.7 3.1zM16.7 14a17.6 17.6 0 0 0 0-4h3a8 8 0 0 1 0 4z"/></svg>
+            <span data-lang-current>IT</span>
+            <svg class="lang-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6z"/></svg>
+          </button>
+          <ul class="lang-menu" role="listbox" aria-label="Lingua / Language">
+            <li><button type="button" role="option" data-lang="it">Italiano</button></li>
+            <li><button type="button" role="option" data-lang="en">English</button></li>
+            <li><button type="button" role="option" data-lang="de">Deutsch</button></li>
+          </ul>
+        </div>
+
+        <!-- WhatsApp (sostituisce il telefono) -->
+        <a class="quick-contact" data-whatsapp href="https://wa.me/393355925880" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp" data-i18n-attr="aria-label:a11y.whatsapp">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.06 1.6 5.83L2 22l4.4-1.15a9.9 9.9 0 0 0 5.64 1.74h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.94 1.34-.5.05-.5.4-3.15-.66-2.65-1.06-4.35-3.76-4.48-3.93-.13-.17-1.07-1.42-1.07-2.72 0-1.3.68-1.93.92-2.2.24-.26.53-.33.7-.33.18 0 .35 0 .5.01.16.01.38-.06.6.46.23.53.78 1.83.85 1.96.07.13.11.29.02.46-.09.17-.14.28-.27.43-.14.16-.29.35-.42.47-.14.13-.28.28-.12.55.16.26.72 1.18 1.54 1.91 1.06.95 1.95 1.24 2.22 1.38.27.13.43.11.59-.07.16-.17.68-.79.86-1.06.18-.27.36-.22.6-.13.25.09 1.55.73 1.82.86.27.13.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
         </a>
-        <a class="quick-contact" href="mailto:info@bblavilla.it" aria-label="Scrivi al b&b La Villa">
+        <a class="quick-contact" href="mailto:info@bblavilla.com" aria-label="Scrivi al b&b La Villa" data-i18n-attr="aria-label:a11y.email">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7L4 7v1l8 5 8-5V7z"/></svg>
         </a>
 
-        <a class="btn btn-cta header-cta" data-booking href="tel:+390543000000">Prenota</a>
+        <a class="btn btn-cta header-cta" data-booking href="https://wa.me/393355925880" data-i18n="cta.book">Prenota</a>
 
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Apri il menu">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Apri il menu" data-i18n-attr="aria-label:a11y.menuOpen">
           <span class="menu-toggle-bars" aria-hidden="true"><span></span><span></span></span>
         </button>
       </div>
@@ -131,28 +183,26 @@
   <nav class="menu-overlay" id="menu-overlay" aria-label="Menu principale" hidden>
     <div class="menu-panel">
       <ul class="menu-list">
-        <li><a href="#camere">Camere</a></li>
-        <li><a href="#la-villa">La Villa</a></li>
-        <li><a href="#servizi">Servizi</a></li>
-        <li><a href="#dove-siamo">Dove Siamo</a></li>
-        <li><a href="#contatti">Contatti</a></li>
+        <li><a href="#camere" data-i18n="nav.camere">Camere</a></li>
+        <li><a href="#la-villa" data-i18n="nav.villa">La Villa</a></li>
+        <li><a href="#servizi" data-i18n="nav.servizi">Servizi</a></li>
+        <li><a href="#dove-siamo" data-i18n="nav.dove">Dove Siamo</a></li>
+        <li><a href="#contatti" data-i18n="nav.contatti">Contatti</a></li>
       </ul>
       <div class="menu-meta">
-        <a href="tel:+390543000000">+39 0543 000000</a>
-        <a href="mailto:info@bblavilla.it">info@bblavilla.it</a>
+        <a data-whatsapp href="https://wa.me/393355925880" target="_blank" rel="noopener" data-i18n="contact.whatsapp">WhatsApp: +39 335 592 5880</a>
+        <a href="mailto:info@bblavilla.com">info@bblavilla.com</a>
       </div>
     </div>
   </nav>
 
   <span id="top"></span>
   <main id="contenuto">
-    <h1 class="visually-hidden">b&amp;b La Villa — bed &amp; breakfast a Forlì</h1>
+    <h1 class="visually-hidden">b&amp;b La Villa, bed &amp; breakfast a Forlì</h1>
 
     <!-- ==================== HERO SCROLLYTELLING ====================
-         Progressive enhancement: senza JS le 4 scene sono impilate e
-         leggibili in scroll normale. main.js aggiunge la classe
-         .js-scrollytelling su <html> solo dopo aver caricato Motion,
-         attivando lo sticky e il crossfade. -->
+         3 scene. Testi impostati da main.js (SCENES, multilingua); qui
+         restano in italiano come fallback senza JS. -->
     <section class="hero" data-hero aria-label="Presentazione">
       <div class="hero-sticky">
         <div class="hero-scenes" data-scenes>
@@ -167,7 +217,7 @@
             <div class="scene-body">
               <p class="eyebrow"><span class="scene-num">01</span> Bed &amp; Breakfast · Forlì</p>
               <h2 class="scene-title">La Villa</h2>
-              <p class="scene-text">Una casa di famiglia a Forlì, tra il verde della campagna e la comodità dell'autostrada.</p>
+              <p class="scene-text">Una base comoda a Forlì, a due passi dall'A14, per chi viaggia e vuole ripartire riposato.</p>
             </div>
           </article>
 
@@ -181,7 +231,7 @@
             <div class="scene-body">
               <p class="eyebrow"><span class="scene-num">02</span> Le stanze</p>
               <h2 class="scene-title">Le Camere</h2>
-              <p class="scene-text">Tre matrimoniali luminose, ognuna con il suo carattere e il suo silenzio.</p>
+              <p class="scene-text">Tre matrimoniali silenziose, ognuna con il suo carattere: per dormire bene e ripartire presto.</p>
             </div>
           </article>
 
@@ -195,29 +245,15 @@
             <div class="scene-body">
               <p class="eyebrow"><span class="scene-num">03</span> Il buongiorno</p>
               <h2 class="scene-title">La Colazione</h2>
-              <p class="scene-text">Ogni mattina prodotti del territorio e dolci fatti in casa, nella sala comune.</p>
-            </div>
-          </article>
-
-          <article class="scene" data-scene="3">
-            <picture class="scene-media">
-              <source media="(max-width: 767.98px)" type="image/webp" srcset="assets/img/hero-4-giardino-mobile.webp">
-              <source media="(max-width: 767.98px)" srcset="assets/img/hero-4-giardino-mobile.jpg">
-              <source type="image/webp" srcset="assets/img/hero-4-giardino.webp">
-              <img src="assets/img/hero-4-giardino.jpg" alt="La villa vista dall'alto tra il giardino, gli alberi d'autunno e il vigneto" loading="lazy" decoding="async" style="object-position:center 42%">
-            </picture>
-            <div class="scene-body">
-              <p class="eyebrow"><span class="scene-num">04</span> All'aperto</p>
-              <h2 class="scene-title">Il Giardino</h2>
-              <p class="scene-text">Uno spazio dove rallentare all'ombra, lontano dal traffico.</p>
+              <p class="scene-text">Ogni mattina una colazione dolce e salata, servita nella sala comune.</p>
             </div>
           </article>
 
         </div>
 
-        <!-- Indicatore di progresso: 4 trattini, l'attivo si allunga -->
+        <!-- Indicatore di progresso: 3 trattini, l'attivo si allunga -->
         <div class="hero-progress" data-progress aria-hidden="true">
-          <span class="is-active"></span><span></span><span></span><span></span>
+          <span class="is-active"></span><span></span><span></span>
         </div>
       </div>
     </section>
@@ -225,10 +261,10 @@
     <!-- ==================== LA VILLA ==================== -->
     <section class="section section-intro" id="la-villa">
       <div class="container narrow">
-        <p class="eyebrow">La casa</p>
-        <h2 class="section-title">Una villa da vivere lentamente</h2>
-        <p class="lead">La Villa è una casa di campagna alle porte di Forlì: pochi passi dall'autostrada, ma con il respiro di un giardino e la quiete della Romagna. Chi si ferma qui trova stanze curate, colazioni vere e l'accoglienza di una famiglia che conosce il territorio.</p>
-        <p>Un punto d'appoggio comodo per il lavoro come per il piacere — tra il centro storico, la costa e le colli — pensato per chi cerca un posto autentico, non un albergo qualsiasi.</p>
+        <p class="eyebrow" data-i18n="villa.eyebrow">La casa</p>
+        <h2 class="section-title" data-i18n="villa.title">Comoda per il lavoro, tranquilla per riposare</h2>
+        <p class="lead" data-i18n="villa.lead">La Villa è una casa alle porte di Forlì, a pochi minuti dal casello dell'A14: la base ideale per chi si sposta per lavoro e cerca una notte silenziosa, un parcheggio comodo e una colazione vera prima di ripartire.</p>
+        <p data-i18n="villa.p2">Camere curate e lontane dal rumore del traffico, Wi-Fi gratuito e check-in serale su richiesta: tutto pensato per chi arriva la sera e riparte presto, senza rinunciare all'accoglienza di una famiglia che conosce il territorio.</p>
       </div>
     </section>
 
@@ -236,52 +272,52 @@
     <section class="section section-camere" id="camere">
       <div class="container">
         <header class="section-head">
-          <p class="eyebrow">Le stanze</p>
-          <h2 class="section-title">Le Camere</h2>
-          <p class="section-sub">Tre matrimoniali, tutte con bagno privato, aria condizionata e Wi-Fi.</p>
+          <p class="eyebrow" data-i18n="camere.eyebrow">Le stanze</p>
+          <h2 class="section-title" data-i18n="camere.title">Le Camere</h2>
+          <p class="section-sub" data-i18n="camere.sub">Tre matrimoniali silenziose, tutte con bagno privato, aria condizionata e Wi-Fi.</p>
         </header>
 
         <ul class="camere-grid" data-stagger>
           <li class="camera-card">
-            <button type="button" class="camera-media" data-gallery="0" aria-label="Apri la galleria — Matrimoniale Deluxe">
+            <button type="button" class="camera-media" data-gallery="0" aria-label="Apri la galleria: Matrimoniale Deluxe" data-i18n-attr="aria-label:cam.deluxe.aria">
               <picture>
                 <source type="image/webp" srcset="assets/img/camere/deluxe-1.webp">
-                <img src="assets/img/camere/deluxe-1.jpg" alt="Matrimoniale Deluxe: la camera con letto matrimoniale e divano" loading="lazy" decoding="async">
+                <img src="assets/img/camere/deluxe-1.jpg" alt="Matrimoniale Deluxe: la camera con letto matrimoniale, divano e parquet" loading="lazy" decoding="async">
               </picture>
               <span class="camera-badge" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path d="M4 7h3l1.5-2h7L17 7h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zm8 3.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/></svg>
-                <span data-count>4</span>
+                <span data-count>2</span>
               </span>
             </button>
             <div class="camera-body">
-              <h3 class="camera-name">Matrimoniale Deluxe</h3>
-              <p class="camera-meta">1 letto matrimoniale alla francese · <span class="guests">2 ospiti</span></p>
-              <p class="camera-desc">La più raccolta: essenziale e luminosa, perfetta per una coppia in viaggio.</p>
-              <a class="link-arrow" data-booking href="tel:+390543000000">Verifica disponibilità<span aria-hidden="true">→</span></a>
+              <h3 class="camera-name" data-i18n="cam.deluxe.name">Matrimoniale Deluxe</h3>
+              <p class="camera-meta" data-i18n-html="cam.deluxe.meta">1 letto matrimoniale alla francese · <span class="guests">2 ospiti · senza balcone</span></p>
+              <p class="camera-desc" data-i18n="cam.deluxe.desc">La più raccolta: essenziale e luminosa, perfetta per una notte di lavoro.</p>
+              <a class="link-arrow" data-booking href="https://wa.me/393355925880" data-i18n="cta.check">Verifica disponibilità<span aria-hidden="true">→</span></a>
             </div>
           </li>
 
           <li class="camera-card">
-            <button type="button" class="camera-media" data-gallery="1" aria-label="Apri la galleria — Deluxe con Balcone">
+            <button type="button" class="camera-media" data-gallery="1" aria-label="Apri la galleria: Deluxe con Balcone" data-i18n-attr="aria-label:cam.balcone.aria">
               <picture>
                 <source type="image/webp" srcset="assets/img/camere/balcone-1.webp">
                 <img src="assets/img/camere/balcone-1.jpg" alt="Deluxe con Balcone: la camera con parete blu" loading="lazy" decoding="async">
               </picture>
               <span class="camera-badge" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path d="M4 7h3l1.5-2h7L17 7h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1zm8 3.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/></svg>
-                <span data-count>7</span>
+                <span data-count>6</span>
               </span>
             </button>
             <div class="camera-body">
-              <h3 class="camera-name">Deluxe con Balcone</h3>
-              <p class="camera-meta">1 letto matrimoniale · <span class="guests">2 ospiti (+1 su richiesta)</span></p>
-              <p class="camera-desc">Con balcone privato affacciato sulla quiete: aria aperta appena sveglio.</p>
-              <a class="link-arrow" data-booking href="tel:+390543000000">Verifica disponibilità<span aria-hidden="true">→</span></a>
+              <h3 class="camera-name" data-i18n="cam.balcone.name">Deluxe con Balcone</h3>
+              <p class="camera-meta" data-i18n-html="cam.balcone.meta">1 letto matrimoniale · <span class="guests">2 ospiti</span></p>
+              <p class="camera-desc" data-i18n="cam.balcone.desc">Con balcone privato affacciato sulla quiete: aria aperta appena sveglio.</p>
+              <a class="link-arrow" data-booking href="https://wa.me/393355925880" data-i18n="cta.check">Verifica disponibilità<span aria-hidden="true">→</span></a>
             </div>
           </li>
 
           <li class="camera-card">
-            <button type="button" class="camera-media" data-gallery="2" aria-label="Apri la galleria — Vista Giardino">
+            <button type="button" class="camera-media" data-gallery="2" aria-label="Apri la galleria: Vista Giardino" data-i18n-attr="aria-label:cam.giardino.aria">
               <picture>
                 <source type="image/webp" srcset="assets/img/camere/giardino-1.webp">
                 <img src="assets/img/camere/giardino-1.jpg" alt="Vista Giardino: la camera luminosa" loading="lazy" decoding="async">
@@ -292,18 +328,18 @@
               </span>
             </button>
             <div class="camera-body">
-              <h3 class="camera-name">Vista Giardino</h3>
-              <p class="camera-meta">1 letto matrimoniale · <span class="guests">2 ospiti</span></p>
-              <p class="camera-desc">Finestre sul verde: la stanza più silenziosa, ideale per riposare davvero.</p>
-              <a class="link-arrow" data-booking href="tel:+390543000000">Verifica disponibilità<span aria-hidden="true">→</span></a>
+              <h3 class="camera-name" data-i18n="cam.giardino.name">Vista Giardino</h3>
+              <p class="camera-meta" data-i18n-html="cam.giardino.meta">1 letto matrimoniale · <span class="guests">2 ospiti</span></p>
+              <p class="camera-desc" data-i18n="cam.giardino.desc">Finestre sul verde: la stanza più silenziosa, ideale per riposare davvero.</p>
+              <a class="link-arrow" data-booking href="https://wa.me/393355925880" data-i18n="cta.check">Verifica disponibilità<span aria-hidden="true">→</span></a>
             </div>
           </li>
         </ul>
 
         <!-- CTA grande a fine sezione camere -->
         <div class="cta-block">
-          <p class="eyebrow">Date libere?</p>
-          <a class="btn btn-cta btn-lg" data-booking href="tel:+390543000000">Verifica disponibilità</a>
+          <p class="eyebrow" data-i18n="cta.datefree">Date libere?</p>
+          <a class="btn btn-cta btn-lg" data-booking href="https://wa.me/393355925880" data-i18n="cta.check2">Verifica disponibilità</a>
         </div>
       </div>
     </section>
@@ -312,39 +348,39 @@
     <section class="section section-servizi" id="servizi">
       <div class="container">
         <header class="section-head">
-          <p class="eyebrow">Il necessario, fatto bene</p>
-          <h2 class="section-title">Servizi</h2>
+          <p class="eyebrow" data-i18n="serv.eyebrow">Il necessario, fatto bene</p>
+          <h2 class="section-title" data-i18n="serv.title">Servizi</h2>
         </header>
         <ul class="servizi-grid" data-stagger>
           <li class="servizio">
             <svg class="servizio-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16v2H4zm2-2a6 6 0 0 1 12 0zM11 3h2v3h-2zM7.5 4.9l1.4 1.4-1.4 1.4-1.4-1.4zM15.1 6.3l1.4-1.4 1.4 1.4-1.4 1.4z"/></svg>
-            <h3>Colazione inclusa</h3>
-            <p>Dolci fatti in casa e prodotti del territorio, ogni mattina.</p>
+            <h3 data-i18n="serv.colazione.t">Colazione inclusa</h3>
+            <p data-i18n="serv.colazione.d">Colazione dolce e salata, servita ogni mattina.</p>
           </li>
           <li class="servizio">
             <svg class="servizio-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a1.6 1.6 0 1 0 0 3.2A1.6 1.6 0 0 0 12 18zM5 11.5a10 10 0 0 1 14 0l-1.8 1.8a7.5 7.5 0 0 0-10.4 0zM2 8.5a14 14 0 0 1 20 0l-1.8 1.8a11.5 11.5 0 0 0-16.4 0z"/></svg>
-            <h3>Wi-Fi gratuito</h3>
-            <p>Connessione veloce in tutta la struttura, anche in giardino.</p>
+            <h3 data-i18n="serv.wifi.t">Wi-Fi gratuito</h3>
+            <p data-i18n="serv.wifi.d">Connessione gratuita in tutta la struttura, anche in giardino.</p>
           </li>
           <li class="servizio">
             <svg class="servizio-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9a4 4 0 0 1 0 8h-5v10H6zm4 6h5a2 2 0 0 0 0-4h-5z"/></svg>
-            <h3>Parcheggio privato</h3>
-            <p>Posto auto gratuito all'interno della proprietà.</p>
+            <h3 data-i18n="serv.park.t">Parcheggio privato</h3>
+            <p data-i18n="serv.park.d">Posto auto gratuito all'interno della proprietà.</p>
           </li>
           <li class="servizio">
             <svg class="servizio-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h14a4 4 0 0 1 0 8H3zm0 10h11v2H3zm14.5-1.5h2A2.5 2.5 0 0 1 22 18v3h-2v-3a.5.5 0 0 0-.5-.5h-2z"/></svg>
-            <h3>Aria condizionata</h3>
-            <p>Clima regolabile in ogni camera, estate e inverno.</p>
+            <h3 data-i18n="serv.aria.t">Aria condizionata</h3>
+            <p data-i18n="serv.aria.d">Clima regolabile in ogni camera, estate e inverno.</p>
           </li>
           <li class="servizio">
             <svg class="servizio-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c3 3 4.5 6 4.5 9a4.5 4.5 0 0 1-9 0c0-3 1.5-6 4.5-9zM11 21v-4h2v4z"/></svg>
-            <h3>Giardino</h3>
-            <p>Uno spazio verde all'aperto per rilassarsi all'ombra.</p>
+            <h3 data-i18n="serv.giardino.t">Giardino</h3>
+            <p data-i18n="serv.giardino.d">Uno spazio verde all'aperto per rilassarsi all'ombra.</p>
           </li>
           <li class="servizio">
             <svg class="servizio-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm-1 3h2v5.4l3.3 2-1 1.7L11 13z"/></svg>
-            <h3>Check-in flessibile</h3>
-            <p>Orari di arrivo concordabili: ti aspettiamo quando ti serve.</p>
+            <h3 data-i18n="serv.checkin.t">Check-in &amp; check-out</h3>
+            <p data-i18n="serv.checkin.d">Check-in dalle 16:00 alle 21:00 · check-out entro le 11:00. Check-in flessibile possibile con chiamata in anticipo.</p>
           </li>
         </ul>
       </div>
@@ -353,23 +389,61 @@
     <!-- ==================== DOVE SIAMO ==================== -->
     <section class="section section-dove" id="dove-siamo">
       <div class="container dove-grid">
-        <picture class="dove-media">
-          <source type="image/webp" srcset="assets/img/dove-siamo.webp">
-          <img src="assets/img/dove-siamo.jpg" alt="La zona intorno a Forlì" loading="lazy" decoding="async">
-        </picture>
-        <div class="dove-body">
-          <p class="eyebrow">Dove siamo</p>
-          <h2 class="section-title">A Forlì, a due passi dall'autostrada</h2>
-          <p>Ci trovi alle porte di Forlì, in una posizione comoda per raggiungere in pochi minuti il casello dell'A14 e il centro città — e in poco più di mezz'ora la costa romagnola.</p>
-          <ul class="distanze">
-            <li><strong>5 min</strong> — casello A14 Forlì</li>
-            <li><strong>10 min</strong> — centro storico e Piazza Saffi</li>
-            <li><strong>10 min</strong> — Aeroporto di Forlì</li>
-            <li><strong>35 min</strong> — mare (Cesenatico / Cervia)</li>
-          </ul>
-          <!-- TODO: sostituire con il link Google Maps reale della struttura -->
-          <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&query=Forl%C3%AC" target="_blank" rel="noopener">Apri in Google Maps<span aria-hidden="true">→</span></a>
+        <!-- Mappa Google incorporata -->
+        <div class="dove-map">
+          <iframe
+            src="https://www.google.com/maps?q=B%26B+La+Villa%2C+Via+Zampeschi+109%2FB%2C+47122+Forl%C3%AC&output=embed"
+            title="Mappa di B&amp;B La Villa, Via Zampeschi 109/B, Forlì"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
+        <div class="dove-body">
+          <p class="eyebrow" data-i18n="dove.eyebrow">Dove siamo</p>
+          <h2 class="section-title" data-i18n="dove.title">A Forlì, a due passi dall'autostrada</h2>
+          <p data-i18n="dove.p">Ci trovi in Via Zampeschi 109/B, alle porte di Forlì: in pochi minuti raggiungi il casello dell'A14 e il centro città, e in poco più di mezz'ora la costa romagnola.</p>
+          <ul class="distanze">
+            <li data-i18n-html="dist.1"><strong>5 min</strong> dal casello A14 Forlì</li>
+            <li data-i18n-html="dist.2"><strong>10 min</strong> dal centro storico e Piazza Saffi</li>
+            <li data-i18n-html="dist.3"><strong>10 min</strong> dall'Aeroporto di Forlì</li>
+            <li data-i18n-html="dist.4"><strong>35 min</strong> dal mare (Cesenatico / Cervia)</li>
+          </ul>
+          <a class="link-arrow" href="https://www.google.com/maps/place/B%26B+La+Villa/@44.2490165,12.0676923,17z/data=!3m2!4b1!5s0x132b562a96422bc3:0x644df70d3751fec2!4m9!3m8!1s0x132b57534135fbdd:0xadec3d1a32351104!5m2!4m1!1i2!8m2!3d44.2490165!4d12.0702672!16s%2Fg%2F11q432c0bx" target="_blank" rel="noopener" data-i18n="map.open">Apri in Google Maps<span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section class="section section-faq" id="faq">
+      <div class="container narrow">
+        <header class="section-head">
+          <p class="eyebrow" data-i18n="faq.eyebrow">Domande frequenti</p>
+          <h2 class="section-title" data-i18n="faq.title">FAQ</h2>
+        </header>
+        <dl class="faq-list">
+          <div class="faq-item">
+            <dt data-i18n="faq.q1">C'è il parcheggio?</dt>
+            <dd data-i18n="faq.a1">Sì, il B&amp;B dispone di parcheggio privato gratuito all'interno della proprietà.</dd>
+          </div>
+          <div class="faq-item">
+            <dt data-i18n="faq.q2">La colazione è inclusa?</dt>
+            <dd data-i18n="faq.a2">Sì. Ogni mattina serviamo una colazione dolce e salata nella sala comune.</dd>
+          </div>
+          <div class="faq-item">
+            <dt data-i18n="faq.q3">Sono ammessi animali?</dt>
+            <dd data-i18n="faq.a3">Al momento non è possibile ospitare animali domestici.</dd>
+          </div>
+          <div class="faq-item">
+            <dt data-i18n="faq.q4">Quanto dista il centro di Forlì?</dt>
+            <dd data-i18n="faq.a4">Il centro storico e Piazza Saffi sono a circa 10 minuti, mentre il casello dell'A14 a circa 5 minuti.</dd>
+          </div>
+          <div class="faq-item">
+            <dt data-i18n="faq.q5">Posso fare il check-in in tarda serata?</dt>
+            <dd data-i18n="faq.a5">Il check-in è dalle 16:00 alle 21:00. Per un arrivo più tardi è possibile concordare un check-in flessibile chiamando in anticipo.</dd>
+          </div>
+          <div class="faq-item">
+            <dt data-i18n="faq.q6">Come posso prenotare?</dt>
+            <dd data-i18n-html="faq.a6">Puoi prenotare o verificare la disponibilità scrivendoci su WhatsApp al +39 335 592 5880 o via email a <a href="mailto:info@bblavilla.com">info@bblavilla.com</a>.</dd>
+          </div>
+        </dl>
       </div>
     </section>
   </main>
@@ -379,34 +453,31 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <p class="brand-name footer-name">b&amp;b <em>La Villa</em></p>
-        <p class="footer-tag">Bed &amp; breakfast · Forlì</p>
-        <a class="btn btn-cta" data-booking href="tel:+390543000000">Prenota</a>
+        <p class="footer-tag" data-i18n="footer.tag">Bed &amp; breakfast · Forlì</p>
+        <a class="btn btn-cta" data-booking href="https://wa.me/393355925880" data-i18n="cta.book">Prenota</a>
       </div>
 
       <div class="footer-col">
-        <h2 class="footer-h">Contatti</h2>
-        <!-- TODO: dati reali della struttura -->
+        <h2 class="footer-h" data-i18n="footer.contatti">Contatti</h2>
         <address>
-          Via delle Rose 00<br>
-          47121 Forlì (FC)<br>
-          <a href="tel:+390543000000">+39 0543 000000</a><br>
-          <a href="mailto:info@bblavilla.it">info@bblavilla.it</a>
+          Via Zampeschi 109/B<br>
+          47122 Forlì (FC)<br>
+          <a data-whatsapp href="https://wa.me/393355925880" target="_blank" rel="noopener">WhatsApp: +39 335 592 5880</a><br>
+          <a href="mailto:info@bblavilla.com">info@bblavilla.com</a>
         </address>
-        <div class="socials">
-          <a href="#" aria-label="Instagram" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.6a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8zM17 3H7a4 4 0 0 0-4 4v10a4 4 0 0 0 4 4h10a4 4 0 0 0 4-4V7a4 4 0 0 0-4-4zm2 14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2zm-1.6-9.9a1 1 0 1 1 0-.02z"/></svg></a>
-          <a href="#" aria-label="Facebook" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H17V3.6c-.3 0-1.3-.1-2.45-.1-2.4 0-4.05 1.45-4.05 4.15v2.25H7.8V13h2.7v8z"/></svg></a>
-        </div>
       </div>
 
       <div class="footer-col">
-        <h2 class="footer-h">Informazioni</h2>
+        <h2 class="footer-h" data-i18n="footer.info">Informazioni</h2>
         <ul class="footer-links">
-          <li><a href="#camere">Camere</a></li>
-          <li><a href="#servizi">Servizi</a></li>
-          <li><a href="#dove-siamo">Dove siamo</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="#camere" data-i18n="nav.camere">Camere</a></li>
+          <li><a href="#servizi" data-i18n="nav.servizi">Servizi</a></li>
+          <li><a href="#dove-siamo" data-i18n="nav.dove">Dove siamo</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
+          <li><a href="cookie.html" data-i18n="footer.cookie">Cookie Policy</a></li>
         </ul>
-        <p class="footer-note">Questo sito non utilizza cookie di profilazione.</p>
+        <p class="footer-note" data-i18n="footer.note">Nessun cookie di profilazione. La mappa è fornita da Google Maps.</p>
         <!-- CIN: Codice Identificativo Nazionale — placeholder DA SOSTITUIRE -->
         <p class="footer-cin">CIN: DA DEFINIRE</p>
       </div>
@@ -414,19 +485,19 @@
 
     <div class="footer-bottom">
       <div class="container">
-        <p>© <span data-year>2026</span> b&amp;b La Villa · Tutti i diritti riservati</p>
+        <p>© <span data-year>2026</span> b&amp;b La Villa · <span data-i18n="footer.rights">Tutti i diritti riservati</span></p>
       </div>
     </div>
   </footer>
 
   <!-- ==================== BARRA CTA MOBILE (solo mobile) ==================== -->
   <div class="mobile-cta" data-mobile-cta aria-hidden="true">
-    <a class="mobile-cta-phone" href="tel:+390543000000" tabindex="-1" aria-label="Chiama il b&b La Villa">
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1z"/></svg>
+    <a class="mobile-cta-phone" data-whatsapp href="https://wa.me/393355925880" target="_blank" rel="noopener" tabindex="-1" aria-label="Scrivici su WhatsApp" data-i18n-attr="aria-label:a11y.whatsapp">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.06 1.6 5.83L2 22l4.4-1.15a9.9 9.9 0 0 0 5.64 1.74h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.94 1.34-.5.05-.5.4-3.15-.66-2.65-1.06-4.35-3.76-4.48-3.93-.13-.17-1.07-1.42-1.07-2.72 0-1.3.68-1.93.92-2.2.24-.26.53-.33.7-.33.18 0 .35 0 .5.01.16.01.38-.06.6.46.23.53.78 1.83.85 1.96.07.13.11.29.02.46-.09.17-.14.28-.27.43-.14.16-.29.35-.42.47-.14.13-.28.28-.12.55.16.26.72 1.18 1.54 1.91 1.06.95 1.95 1.24 2.22 1.38.27.13.43.11.59-.07.16-.17.68-.79.86-1.06.18-.27.36-.22.6-.13.25.09 1.55.73 1.82.86.27.13.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
     </a>
-    <a class="btn btn-cta mobile-cta-book" data-booking href="tel:+390543000000" tabindex="-1">Prenota</a>
+    <a class="btn btn-cta mobile-cta-book" data-booking href="https://wa.me/393355925880" tabindex="-1" data-i18n="cta.book">Prenota</a>
   </div>
 
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/main.js?v=5"></script>
 </body>
 </html>
