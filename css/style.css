@@ -377,6 +377,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .camera-badge svg { width: 15px; height: 15px; fill: currentColor; }
 .camera-body { padding: 1.5rem 1.5rem 1.7rem; display: flex; flex-direction: column; gap: .55rem; flex: 1; }
 .camera-name { font-family: var(--serif); font-weight: 500; font-size: 1.5rem; line-height: 1.15; }
+.camera-type { margin-top: -.35rem; font-family: var(--sans); font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--salvia); }
 .camera-meta { font-size: .92rem; color: color-mix(in srgb, var(--ink) 66%, transparent); }
 .camera-meta .guests { white-space: nowrap; }
 .camera-desc { color: color-mix(in srgb, var(--ink) 80%, transparent); }
