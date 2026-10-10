@@ -290,8 +290,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 .hero-progress { display: none; }
 
-/* ---------- HERO (modalità scrollytelling, con JS) ---------- */
-.js-scrollytelling .hero { height: 300vh; }
+/* ---------- HERO (modalità scrollytelling, con JS) ----------
+   Altezza = distanza di scroll dell'animazione. Lo scroll "utile" è
+   (height - 100vh): a 220vh sono 120vh, cioè -40% rispetto ai 200vh
+   dei precedenti 300vh → scrollytelling ~40% più veloce. */
+.js-scrollytelling .hero { height: 220vh; }
 .js-scrollytelling .hero-sticky {
   position: sticky; top: 0; height: 100svh; height: 100dvh; overflow: hidden;
 }
