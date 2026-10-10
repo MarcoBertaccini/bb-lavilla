@@ -183,6 +183,7 @@ const TRANSLATIONS = {
     "faq.a5": "Il check-in è dalle 16:00 alle 21:00. Per un arrivo più tardi è possibile concordare un check-in flessibile chiamando in anticipo.",
     "faq.q6": "Come posso prenotare?",
     "faq.a6": "Puoi prenotare o verificare la disponibilità scrivendoci su WhatsApp al +39 335 592 5880 o via email a <a href=\"mailto:info@bblavilla.com\">info@bblavilla.com</a>.",
+    "gal.eyebrow": "Uno sguardo", "gal.title": "La Villa in immagini",
   },
   en: {
     "title": "B&B La Villa, Bed & Breakfast in Forlì",
@@ -249,6 +250,7 @@ const TRANSLATIONS = {
     "faq.a5": "Check-in is from 4:00 to 9:00 pm. For a later arrival, a flexible check-in can be arranged by calling ahead.",
     "faq.q6": "How can I book?",
     "faq.a6": "You can book or check availability by writing to us on WhatsApp at +39 335 592 5880 or by email at <a href=\"mailto:info@bblavilla.com\">info@bblavilla.com</a>.",
+    "gal.eyebrow": "A glimpse", "gal.title": "The Villa in pictures",
   },
   de: {
     "title": "B&B La Villa, Bed & Breakfast in Forlì",
@@ -315,6 +317,7 @@ const TRANSLATIONS = {
     "faq.a5": "Der Check-in ist von 16:00 bis 21:00 Uhr. Für eine spätere Ankunft kann nach vorheriger telefonischer Absprache ein flexibler Check-in vereinbart werden.",
     "faq.q6": "Wie kann ich buchen?",
     "faq.a6": "Sie können über WhatsApp unter +39 335 592 5880 oder per E-Mail an <a href=\"mailto:info@bblavilla.com\">info@bblavilla.com</a> buchen oder die Verfügbarkeit anfragen.",
+    "gal.eyebrow": "Ein Blick", "gal.title": "Die Villa in Bildern",
   },
 };
 
@@ -333,6 +336,7 @@ applyCamere();
 initMenu();
 initScrollUI();
 initGallery();
+initCarousel();
 initI18n();        // imposta la lingua e applica tutti i testi (+ applyScenes)
 
 // Scrollytelling e reveal: richiedono Motion. Import in try/catch.
@@ -639,6 +643,71 @@ function initGallery() {
     const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
     if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) show(dx < 0 ? i + 1 : i - 1);
   }, { passive: true });
+}
+
+/* Carosello foto (scroll-snap nativo): frecce, puntini, swipe, tastiera,
+   autoplay gentile con pausa su interazione (off con prefers-reduced-motion). */
+function initCarousel() {
+  const root = document.querySelector("[data-carousel]");
+  if (!root) return;
+  const track = root.querySelector("[data-carousel-track]");
+  const slides = [...track.children];
+  const dotsWrap = root.querySelector("[data-carousel-dots]");
+  const prev = root.querySelector(".carousel-prev");
+  const next = root.querySelector(".carousel-next");
+  if (slides.length < 2) {
+    if (prev) prev.hidden = true;
+    if (next) next.hidden = true;
+    return;
+  }
+
+  let index = 0;
+  const gap = () => parseFloat(getComputedStyle(track).columnGap) || 0;
+  const step = () => slides[0].getBoundingClientRect().width + gap();
+
+  const dots = slides.map((_, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("aria-label", "Vai alla foto " + (i + 1));
+    b.addEventListener("click", () => go(i));
+    dotsWrap.appendChild(b);
+    return b;
+  });
+
+  const update = () => dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+  function go(i) {
+    index = (i + slides.length) % slides.length;
+    track.scrollTo({ left: Math.round(index * step()), behavior: "smooth" });
+    update();
+  }
+
+  let raf;
+  track.addEventListener("scroll", () => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      const i = Math.round(track.scrollLeft / step());
+      if (i !== index && i >= 0 && i < slides.length) { index = i; update(); }
+    });
+  }, { passive: true });
+
+  prev.addEventListener("click", () => go(index - 1));
+  next.addEventListener("click", () => go(index + 1));
+  root.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") { e.preventDefault(); go(index - 1); }
+    else if (e.key === "ArrowRight") { e.preventDefault(); go(index + 1); }
+  });
+
+  update();
+
+  if (!reduceMotion) {
+    let timer = null;
+    const start = () => { stop(); timer = setInterval(() => go(index + 1), 5000); };
+    const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+    ["pointerenter", "focusin", "pointerdown", "touchstart"].forEach((ev) => root.addEventListener(ev, stop, { passive: true }));
+    ["pointerleave", "focusout"].forEach((ev) => root.addEventListener(ev, start));
+    document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
+    start();
+  }
 }
 
 /* Menu overlay boutique: apertura/chiusura, ESC, focus trap, scroll lock. */

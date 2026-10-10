@@ -48,7 +48,7 @@
   <link rel="preload" as="image" href="assets/img/hero-1-esterno.webp" media="(min-width: 768px)">
   <link rel="preload" as="image" href="assets/img/hero-1-esterno-mobile.webp" media="(max-width: 767.98px)">
 
-  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="stylesheet" href="css/style.css?v=9">
 
   <!-- Dati strutturati JSON-LD (schema BedAndBreakfast). -->
   <script type="application/ld+json">
@@ -347,6 +347,69 @@
       </div>
     </section>
 
+    <!-- ==================== GALLERIA (carosello) ==================== -->
+    <section class="section section-galleria" id="galleria">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-i18n="gal.eyebrow">Uno sguardo</p>
+          <h2 class="section-title" data-i18n="gal.title">La Villa in immagini</h2>
+        </header>
+        <div class="carousel" data-carousel>
+          <button type="button" class="carousel-btn carousel-prev" aria-label="Foto precedente" data-i18n-attr="aria-label:lb.prev">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+          </button>
+          <ul class="carousel-track" data-carousel-track>
+            <li class="carousel-slide">
+              <picture>
+                <source type="image/webp" srcset="assets/img/hero-1-esterno.webp">
+                <img src="assets/img/hero-1-esterno.jpg" alt="L'esterno di B&amp;B La Villa a Forlì, con il pergolato d'ingresso e il giardino" loading="lazy" decoding="async">
+              </picture>
+            </li>
+            <li class="carousel-slide">
+              <picture>
+                <source type="image/webp" srcset="assets/img/hero-3-colazione.webp">
+                <img src="assets/img/hero-3-colazione.jpg" alt="La colazione dolce e salata servita a B&amp;B La Villa" loading="lazy" decoding="async">
+              </picture>
+            </li>
+            <li class="carousel-slide">
+              <picture>
+                <source type="image/webp" srcset="assets/img/camere/deluxe-1.webp">
+                <img src="assets/img/camere/deluxe-1.jpg" alt="Camera Perla: letto matrimoniale, divano e parquet" loading="lazy" decoding="async">
+              </picture>
+            </li>
+            <li class="carousel-slide">
+              <picture>
+                <source type="image/webp" srcset="assets/img/camere/balcone-2.webp">
+                <img src="assets/img/camere/balcone-2.jpg" alt="Camera Blu: camera matrimoniale luminosa con testata blu" loading="lazy" decoding="async">
+              </picture>
+            </li>
+            <li class="carousel-slide">
+              <picture>
+                <source type="image/webp" srcset="assets/img/camere/giardino-2.webp">
+                <img src="assets/img/camere/giardino-2.jpg" alt="Camera Ortensia: camera matrimoniale con luce calda" loading="lazy" decoding="async">
+              </picture>
+            </li>
+            <li class="carousel-slide">
+              <picture>
+                <source type="image/webp" srcset="assets/img/camere/giardino-3.webp">
+                <img src="assets/img/camere/giardino-3.jpg" alt="La terrazza con tavolino affacciata sul giardino" loading="lazy" decoding="async">
+              </picture>
+            </li>
+            <li class="carousel-slide">
+              <picture>
+                <source type="image/webp" srcset="assets/img/camere/balcone-4.webp">
+                <img src="assets/img/camere/balcone-4.jpg" alt="Il bagno con vasca idromassaggio" loading="lazy" decoding="async">
+              </picture>
+            </li>
+          </ul>
+          <button type="button" class="carousel-btn carousel-next" aria-label="Foto successiva" data-i18n-attr="aria-label:lb.next">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          <div class="carousel-dots" data-carousel-dots></div>
+        </div>
+      </div>
+    </section>
+
     <!-- ==================== SERVIZI ==================== -->
     <section class="section section-servizi" id="servizi">
       <div class="container">
@@ -501,6 +564,6 @@
     <a class="btn btn-cta mobile-cta-book" data-booking href="https://wa.me/393355925880" tabindex="-1" data-i18n="cta.book">Prenota</a>
   </div>
 
-  <script type="module" src="js/main.js?v=8"></script>
+  <script type="module" src="js/main.js?v=9"></script>
 </body>
 </html>
